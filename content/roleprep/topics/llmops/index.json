@@ -1,0 +1,27 @@
+{
+  "schema": "roleprep-topic@2",
+  "schemaVersion": 2,
+  "id": "llmops",
+  "title": "LLMOps & deployment",
+  "taxonomyIds": [],
+  "subtopics": [
+    {
+      "id": "observability-tracing",
+      "title": "Observability & tracing",
+      "status": "planned",
+      "file": null
+    },
+    {
+      "id": "versioning-prompts-models",
+      "title": "Versioning prompts & models",
+      "status": "planned",
+      "file": null
+    },
+    {
+      "id": "release-rollback",
+      "title": "Release & rollback",
+      "status": "planned",
+      "file": null
+    }
+  ]
+}

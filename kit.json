@@ -1,0 +1,75 @@
+{
+  "$schema": "../ajch_agent_framework/schemas/kit.schema.json",
+  "framework": "0.2.0",
+  "vertical": {
+    "key": "roleprep",
+    "name": "Role Prep",
+    "contentRoot": "content/roleprep"
+  },
+  "external": {
+    "from": "ajch_platform",
+    "agents": [
+      "appsec-engineer"
+    ],
+    "skills": [
+      "platform-vocabulary",
+      "vertical-pipeline",
+      "content-structure-craft",
+      "mermaid-diagram-craft"
+    ]
+  },
+  "protected": [
+    {
+      "pattern": "/content/roleprep/examples/",
+      "reason": "archived job-ad packs are read-only"
+    }
+  ],
+  "checks": [
+    {
+      "match": "/content/roleprep/.*\\.json$",
+      "run": [
+        "scripts/validate-content.mjs",
+        "scripts/check-options.mjs"
+      ]
+    },
+    {
+      "match": "/docs/[^/]+\\.md$",
+      "run": [
+        "scripts/check-docs.mjs"
+      ]
+    }
+  ],
+  "docs": {
+    "owner": "Ajeet Chouksey",
+    "skills": [
+      "platform-vocabulary"
+    ],
+    "order": [
+      {
+        "file": "01-business-case.md",
+        "answers": "Why build it, for whom, why we win",
+        "dependsOn": ""
+      },
+      {
+        "file": "02-use-cases.md",
+        "answers": "Who uses it, for what, and the journey they take",
+        "dependsOn": "01"
+      },
+      {
+        "file": "03-epic-features-stories.md",
+        "answers": "What we build, in which phase, with acceptance criteria",
+        "dependsOn": "01, 02"
+      },
+      {
+        "file": "04-ux-ui-plan.md",
+        "answers": "How every feature looks and behaves",
+        "dependsOn": "02, 03"
+      },
+      {
+        "file": "05-repo-brand-agent-kit-plan.md",
+        "answers": "Where the code, content and agents live and how they work",
+        "dependsOn": "03, 04"
+      }
+    ]
+  }
+}

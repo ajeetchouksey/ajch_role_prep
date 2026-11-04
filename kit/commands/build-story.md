@@ -1,0 +1,14 @@
+---
+description: Build an epic story (RP-x.y) in the web app or Workers, then test and gate it
+argument-hint: <story id, e.g. RP-3.2> [path to ajch_platform checkout]
+---
+
+Build Role Prep story $ARGUMENTS.
+
+Use the `roleprep-lead` agent:
+
+1. Find the story's acceptance criteria in the epic and its screen in `roleprep-ux-standard`. If the screen has no approved UX, stop and run `/ux-review <screen> prototype` first.
+2. Route: screens and client logic → `roleprep-frontend-engineer`; Worker routes or MCP → `roleprep-backend-engineer`.
+3. Collect any change the engineer may not make itself (routes, `ui/` primitives, CI) as a written request for the platform's owning agent.
+4. `roleprep-qa` checks every acceptance criterion, then `appsec-engineer`.
+5. Report in the lead's format, with each acceptance criterion marked met or not met.

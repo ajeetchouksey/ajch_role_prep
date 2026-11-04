@@ -1,0 +1,10 @@
+{
+  "name": "roleprep-kit",
+  "version": "0.1.0",
+  "description": "Agents, skills, commands and hooks for authoring, building and testing Role Prep: AI-role interview practice with Tech, Tech Lead and Leadership bars.",
+  "author": {
+    "name": "AaryaAI"
+  },
+  "homepage": "https://aaryaai.dev/roleprep",
+  "repository": "https://github.com/ajeetchouksey/ajch_role_prep"
+}

@@ -1,0 +1,27 @@
+{
+  "schema": "roleprep-topic@2",
+  "schemaVersion": 2,
+  "id": "teams",
+  "title": "Leading AI teams",
+  "taxonomyIds": [],
+  "subtopics": [
+    {
+      "id": "hiring-team-shape",
+      "title": "Hiring & team shape",
+      "status": "planned",
+      "file": null
+    },
+    {
+      "id": "stakeholders-expectations",
+      "title": "Stakeholders & expectations",
+      "status": "planned",
+      "file": null
+    },
+    {
+      "id": "delivery-change",
+      "title": "Delivery & change",
+      "status": "planned",
+      "file": null
+    }
+  ]
+}

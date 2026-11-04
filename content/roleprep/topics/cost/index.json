@@ -1,0 +1,27 @@
+{
+  "schema": "roleprep-topic@2",
+  "schemaVersion": 2,
+  "id": "cost",
+  "title": "Cost & scale",
+  "taxonomyIds": [],
+  "subtopics": [
+    {
+      "id": "caching-batching",
+      "title": "Caching & batching",
+      "status": "planned",
+      "file": null
+    },
+    {
+      "id": "model-routing",
+      "title": "Model routing",
+      "status": "planned",
+      "file": null
+    },
+    {
+      "id": "latency-budgets",
+      "title": "Latency budgets",
+      "status": "planned",
+      "file": null
+    }
+  ]
+}

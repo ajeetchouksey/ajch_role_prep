@@ -1,0 +1,16 @@
+# CODEOWNERS — required reviewer assignments per path
+
+# ── Default: catch-all ────────────────────────────────────────────────────
+*                                   @ajeetchouksey @ajchava
+
+# ── Role Prep content — the published product ─────────────────────────────
+/content/roleprep/                  @ajeetchouksey @ajchava
+
+# ── Agent kit — canonical here for Role Prep-only agents and skills; the
+# AppSec agent and the shared skills are synced from ajch_platform ─────────
+/.claude/                           @ajeetchouksey @ajchava
+
+# ── CI, validators and plugin packaging — highest protection ──────────────
+/.github/                           @ajeetchouksey @ajchava
+/scripts/                           @ajeetchouksey @ajchava
+/.claude-plugin/                    @ajeetchouksey @ajchava

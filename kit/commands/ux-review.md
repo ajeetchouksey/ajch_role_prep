@@ -1,0 +1,15 @@
+---
+description: Prototype or review a Role Prep screen against the UX bar
+argument-hint: <screen (S1 to S14) or flow> [prototype | review]
+---
+
+Role Prep UX work: $ARGUMENTS
+
+Use the `roleprep-ux-designer` agent with `roleprep-ux-standard` and
+`aaryaai-brand`.
+
+- **prototype:** extend `prototypes/role-prep-practice.html` for the screen,
+  covering its setback states; then have `roleprep-qa` run the browser smoke
+  test at 1280px and 390px before reporting.
+- **review:** score the screen on the six-principle bar and return the
+  designer's review format.

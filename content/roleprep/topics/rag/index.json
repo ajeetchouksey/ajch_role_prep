@@ -1,0 +1,39 @@
+{
+  "schema": "roleprep-topic@2",
+  "schemaVersion": 2,
+  "id": "rag",
+  "title": "RAG & retrieval",
+  "taxonomyIds": [],
+  "subtopics": [
+    {
+      "id": "hybrid-search-reranking",
+      "title": "Hybrid search & reranking",
+      "status": "live",
+      "file": "content/roleprep/topics/rag/hybrid-search-reranking.json"
+    },
+    {
+      "id": "chunking-indexing",
+      "title": "Chunking & indexing",
+      "status": "planned",
+      "file": null
+    },
+    {
+      "id": "grounding-citations",
+      "title": "Grounding & citations",
+      "status": "planned",
+      "file": null
+    },
+    {
+      "id": "rag-evaluation",
+      "title": "RAG evaluation",
+      "status": "planned",
+      "file": null
+    },
+    {
+      "id": "access-control-in-rag",
+      "title": "Access control in RAG",
+      "status": "planned",
+      "file": null
+    }
+  ]
+}

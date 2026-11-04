@@ -1,0 +1,39 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://aaryaai.dev/schemas/roleprep-feedback-1.json",
+  "title": "Role Prep feedback response",
+  "type": "object",
+  "required": ["rubric", "levelFit", "topFix", "improved"],
+  "additionalProperties": false,
+  "properties": {
+    "rubric": {
+      "type": "array",
+      "minItems": 3,
+      "maxItems": 6,
+      "items": {
+        "type": "object",
+        "required": ["i", "status"],
+        "additionalProperties": false,
+        "properties": {
+          "i": { "type": "integer", "minimum": 0, "maximum": 5 },
+          "status": { "enum": ["covered", "partial", "missed"] },
+          "evidence": { "type": "string", "maxLength": 300 },
+          "note": { "type": "string", "maxLength": 300 }
+        }
+      }
+    },
+    "levelFit": {
+      "type": "object",
+      "required": ["verdict"],
+      "additionalProperties": false,
+      "properties": {
+        "verdict": { "enum": ["right", "too-technical", "too-shallow", "too-vague"] },
+        "note": { "type": "string", "maxLength": 300 }
+      }
+    },
+    "strengths": { "type": "array", "maxItems": 2, "items": { "type": "string", "maxLength": 200 } },
+    "redFlags": { "type": "array", "maxItems": 5, "items": { "type": "string", "maxLength": 200 } },
+    "topFix": { "type": "string", "minLength": 1, "maxLength": 300 },
+    "improved": { "type": "string", "minLength": 1, "maxLength": 1400 }
+  }
+}

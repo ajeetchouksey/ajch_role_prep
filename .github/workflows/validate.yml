@@ -1,0 +1,52 @@
+name: Validate Role Prep content
+
+on:
+  pull_request:
+    paths:
+      - 'content/roleprep/**'
+      - 'docs/**'
+      - 'scripts/**'
+      - '.claude/**'
+      - 'kit/**'
+      - 'kit.json'
+  push:
+    branches: [main]
+    paths:
+      - 'content/roleprep/**'
+      - 'docs/**'
+      - 'scripts/**'
+      - '.claude/**'
+      - 'kit/**'
+      - 'kit.json'
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Content structure and editorial rules
+        run: node scripts/validate-content.mjs
+      - name: Pushback giveaway checks
+        run: node scripts/check-options.mjs
+      - name: Framework version from kit.json
+        id: kit
+        run: echo "version=$(node -p "require('./kit.json').framework")" >> "$GITHUB_OUTPUT"
+      - name: Check out ajch_agent_framework at that version
+        uses: actions/checkout@v4
+        with:
+          repository: ajeetchouksey/ajch_agent_framework
+          ref: v${{ steps.kit.outputs.version }}
+          path: .framework
+      - name: Generated kit matches its sources (no drift)
+        run: node scripts/kit.mjs --check
+        env:
+          KIT_FRAMEWORK: .framework
+      - name: Diagram SVGs match their sources
+        run: node scripts/build-diagrams.mjs --check
+      - name: Planning docs structure, links and diagrams
+        run: node scripts/check-docs.mjs
+      - name: Plugin builds from .claude/
+        run: node scripts/build-plugin.mjs

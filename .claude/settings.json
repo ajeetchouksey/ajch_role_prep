@@ -1,0 +1,25 @@
+{
+  "hooks": {
+    "PreToolUse": [
+      {
+        "matcher": "Write|Edit|MultiEdit",
+        "hooks": [{ "type": "command", "command": "node \"$CLAUDE_PROJECT_DIR/.claude/hooks/guard-protected.mjs\"" }]
+      }
+    ],
+    "PostToolUse": [
+      {
+        "matcher": "Write|Edit|MultiEdit",
+        "hooks": [{ "type": "command", "command": "node \"$CLAUDE_PROJECT_DIR/.claude/hooks/validate-on-write.mjs\"" }]
+      }
+    ]
+  },
+  "permissions": {
+    "allow": [
+      "Bash(node scripts/validate-content.mjs:*)",
+      "Bash(node scripts/check-options.mjs:*)",
+      "Bash(node scripts/build-catalog.mjs:*)",
+      "Bash(npm run validate)",
+      "Bash(npm run check)"
+    ]
+  }
+}

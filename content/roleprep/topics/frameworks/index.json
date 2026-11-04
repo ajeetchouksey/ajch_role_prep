@@ -1,0 +1,27 @@
+{
+  "schema": "roleprep-topic@2",
+  "schemaVersion": 2,
+  "id": "frameworks",
+  "title": "Agent frameworks & MCP",
+  "taxonomyIds": [],
+  "subtopics": [
+    {
+      "id": "mcp-servers-tools",
+      "title": "MCP servers & tools",
+      "status": "planned",
+      "file": null
+    },
+    {
+      "id": "choosing-a-framework",
+      "title": "Choosing a framework",
+      "status": "planned",
+      "file": null
+    },
+    {
+      "id": "tool-design",
+      "title": "Tool design",
+      "status": "planned",
+      "file": null
+    }
+  ]
+}

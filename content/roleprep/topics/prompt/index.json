@@ -1,0 +1,33 @@
+{
+  "schema": "roleprep-topic@2",
+  "schemaVersion": 2,
+  "id": "prompt",
+  "title": "Prompt & context design",
+  "taxonomyIds": [],
+  "subtopics": [
+    {
+      "id": "system-prompts-structure",
+      "title": "System prompts & structure",
+      "status": "planned",
+      "file": null
+    },
+    {
+      "id": "few-shot-examples",
+      "title": "Few-shot examples",
+      "status": "planned",
+      "file": null
+    },
+    {
+      "id": "context-budgeting",
+      "title": "Context budgeting",
+      "status": "planned",
+      "file": null
+    },
+    {
+      "id": "structured-output",
+      "title": "Structured output",
+      "status": "planned",
+      "file": null
+    }
+  ]
+}

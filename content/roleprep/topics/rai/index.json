@@ -1,0 +1,33 @@
+{
+  "schema": "roleprep-topic@2",
+  "schemaVersion": 2,
+  "id": "rai",
+  "title": "Responsible AI & governance",
+  "taxonomyIds": [],
+  "subtopics": [
+    {
+      "id": "safety-content-filters",
+      "title": "Safety & content filters",
+      "status": "planned",
+      "file": null
+    },
+    {
+      "id": "bias-fairness",
+      "title": "Bias & fairness",
+      "status": "planned",
+      "file": null
+    },
+    {
+      "id": "privacy-data",
+      "title": "Privacy & data",
+      "status": "planned",
+      "file": null
+    },
+    {
+      "id": "audit-compliance",
+      "title": "Audit & compliance",
+      "status": "planned",
+      "file": null
+    }
+  ]
+}

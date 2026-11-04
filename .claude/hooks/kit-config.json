@@ -1,0 +1,75 @@
+{
+  "generatedBy": "ajch_agent_framework 0.2.0",
+  "vertical": "roleprep",
+  "checks": [
+    {
+      "match": "/content/roleprep/.*\\.json$",
+      "run": [
+        "scripts/validate-content.mjs",
+        "scripts/check-options.mjs"
+      ]
+    },
+    {
+      "match": "/docs/[^/]+\\.md$",
+      "run": [
+        "scripts/check-docs.mjs"
+      ]
+    }
+  ],
+  "protected": [
+    {
+      "pattern": "/content/roleprep/examples/",
+      "reason": "archived job-ad packs are read-only"
+    },
+    {
+      "pattern": "/\\.claude/agents/appsec-engineer\\.md$",
+      "reason": "synced from ajch_platform: edit it there and re-sync"
+    },
+    {
+      "pattern": "/\\.claude/skills/(platform-vocabulary|vertical-pipeline|content-structure-craft|mermaid-diagram-craft)/",
+      "reason": "synced from ajch_platform: edit it there and re-sync"
+    }
+  ],
+  "generated": {
+    ".claude/agents/roleprep-backend-engineer.md": "kit/agents/roleprep-backend-engineer.md",
+    ".claude/agents/roleprep-docs-writer.md": "kit/agents/roleprep-docs-writer.md",
+    ".claude/agents/roleprep-frontend-engineer.md": "kit/agents/roleprep-frontend-engineer.md",
+    ".claude/agents/roleprep-growth-analyst.md": "kit/agents/roleprep-growth-analyst.md",
+    ".claude/agents/roleprep-lead.md": "kit/agents/roleprep-lead.md",
+    ".claude/agents/roleprep-publisher.md": "kit/agents/roleprep-publisher.md",
+    ".claude/agents/roleprep-qa.md": "kit/agents/roleprep-qa.md",
+    ".claude/agents/roleprep-ux-designer.md": "kit/agents/roleprep-ux-designer.md",
+    ".claude/agents/roleprep-writer.md": "kit/agents/roleprep-writer.md",
+    ".claude/agents/rubric-reviewer.md": "kit/agents/rubric-reviewer.md",
+    ".claude/agents/scoring-calibrator.md": "kit/agents/scoring-calibrator.md",
+    ".claude/skills/aaryaai-brand/SKILL.md": "kit/skills/aaryaai-brand/SKILL.md",
+    ".claude/skills/level-voice/SKILL.md": "kit/skills/level-voice/SKILL.md",
+    ".claude/skills/moment-craft/SKILL.md": "kit/skills/moment-craft/SKILL.md",
+    ".claude/skills/roleprep-content-standard/SKILL.md": "kit/skills/roleprep-content-standard/SKILL.md",
+    ".claude/skills/roleprep-engineering/SKILL.md": "kit/skills/roleprep-engineering/SKILL.md",
+    ".claude/skills/roleprep-ux-standard/SKILL.md": "kit/skills/roleprep-ux-standard/SKILL.md",
+    ".claude/skills/rubric-craft/SKILL.md": "kit/skills/rubric-craft/SKILL.md",
+    ".claude/skills/scoring-contract/references/feedback-contract.schema.json": "kit/skills/scoring-contract/references/feedback-contract.schema.json",
+    ".claude/skills/scoring-contract/references/feedback-prompt.md": "kit/skills/scoring-contract/references/feedback-prompt.md",
+    ".claude/skills/scoring-contract/SKILL.md": "kit/skills/scoring-contract/SKILL.md",
+    ".claude/skills/model-policy/SKILL.md": "ajch_agent_framework/skills/model-policy.mjs",
+    ".claude/skills/docs-standard/SKILL.md": "ajch_agent_framework/skills/docs-standard.mjs",
+    ".claude/skills/svg-diagram-craft/SKILL.md": "ajch_agent_framework/skills/svg-diagram-craft.mjs",
+    ".claude/commands/build-story.md": "kit/commands/build-story.md",
+    ".claude/commands/new-subtopic.md": "kit/commands/new-subtopic.md",
+    ".claude/commands/pilot-scoring.md": "kit/commands/pilot-scoring.md",
+    ".claude/commands/qa.md": "kit/commands/qa.md",
+    ".claude/commands/refresh-topic.md": "kit/commands/refresh-topic.md",
+    ".claude/commands/release.md": "kit/commands/release.md",
+    ".claude/commands/review.md": "kit/commands/review.md",
+    ".claude/commands/ux-review.md": "kit/commands/ux-review.md",
+    ".claude/commands/doc.md": "ajch_agent_framework/commands/doc.mjs",
+    ".claude/hooks/guard-protected.mjs": "ajch_agent_framework/hooks/guard-protected.mjs",
+    ".claude/hooks/validate-on-write.mjs": "ajch_agent_framework/hooks/validate-on-write.mjs",
+    "scripts/check-docs.mjs": "ajch_agent_framework/checks/check-docs.mjs",
+    "scripts/diagram-kit.mjs": "ajch_agent_framework/tools/diagram-kit.mjs",
+    "scripts/build-diagrams.mjs": "ajch_agent_framework/tools/build-diagrams.mjs",
+    ".claude/hooks/kit-config.json": "kit.json",
+    ".claude/kit.lock.json": "kit.json"
+  }
+}

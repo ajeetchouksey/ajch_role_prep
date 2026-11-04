@@ -1,0 +1,27 @@
+{
+  "schema": "roleprep-topic@2",
+  "schemaVersion": 2,
+  "id": "strategy",
+  "title": "AI strategy & value",
+  "taxonomyIds": [],
+  "subtopics": [
+    {
+      "id": "picking-use-cases",
+      "title": "Picking use cases",
+      "status": "planned",
+      "file": null
+    },
+    {
+      "id": "roi-business-cases",
+      "title": "ROI & business cases",
+      "status": "planned",
+      "file": null
+    },
+    {
+      "id": "build-vs-buy",
+      "title": "Build vs buy",
+      "status": "planned",
+      "file": null
+    }
+  ]
+}

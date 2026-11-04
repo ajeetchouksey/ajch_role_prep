@@ -1,0 +1,138 @@
+{
+  "schema": "roleprep-catalog@2",
+  "schemaVersion": 2,
+  "contentVersion": "0.1.0",
+  "updatedAt": "2026-11-03",
+  "levels": [
+    {
+      "id": "tech",
+      "label": "Tech",
+      "note": "Engineer interview: how it works and how you would build it."
+    },
+    {
+      "id": "lead",
+      "label": "Tech Lead",
+      "note": "Lead or staff interview: trade-offs, decisions and how your team works."
+    },
+    {
+      "id": "leadership",
+      "label": "Leadership",
+      "note": "Head-of or director interview: impact, risk, cost and how you report."
+    }
+  ],
+  "kinds": [
+    {
+      "id": "know-cold",
+      "label": "Know this cold",
+      "targetSeconds": 60
+    },
+    {
+      "id": "question",
+      "label": "Interview question",
+      "targetSeconds": 120
+    },
+    {
+      "id": "pushback",
+      "label": "Pushback",
+      "targetSeconds": 0
+    },
+    {
+      "id": "challenge",
+      "label": "Challenge",
+      "targetSeconds": 300
+    }
+  ],
+  "topics": [
+    {
+      "id": "rag",
+      "title": "RAG & retrieval",
+      "indexFile": "content/roleprep/topics/rag/index.json",
+      "subtopics": 5,
+      "live": 1
+    },
+    {
+      "id": "agents",
+      "title": "Agents & orchestration",
+      "indexFile": "content/roleprep/topics/agents/index.json",
+      "subtopics": 4,
+      "live": 0
+    },
+    {
+      "id": "eval",
+      "title": "Evaluation & quality",
+      "indexFile": "content/roleprep/topics/eval/index.json",
+      "subtopics": 4,
+      "live": 0
+    },
+    {
+      "id": "prompt",
+      "title": "Prompt & context design",
+      "indexFile": "content/roleprep/topics/prompt/index.json",
+      "subtopics": 4,
+      "live": 0
+    },
+    {
+      "id": "frameworks",
+      "title": "Agent frameworks & MCP",
+      "indexFile": "content/roleprep/topics/frameworks/index.json",
+      "subtopics": 3,
+      "live": 0
+    },
+    {
+      "id": "genai",
+      "title": "GenAI foundations",
+      "indexFile": "content/roleprep/topics/genai/index.json",
+      "subtopics": 4,
+      "live": 0
+    },
+    {
+      "id": "llmops",
+      "title": "LLMOps & deployment",
+      "indexFile": "content/roleprep/topics/llmops/index.json",
+      "subtopics": 3,
+      "live": 0
+    },
+    {
+      "id": "cost",
+      "title": "Cost & scale",
+      "indexFile": "content/roleprep/topics/cost/index.json",
+      "subtopics": 3,
+      "live": 0
+    },
+    {
+      "id": "rai",
+      "title": "Responsible AI & governance",
+      "indexFile": "content/roleprep/topics/rai/index.json",
+      "subtopics": 4,
+      "live": 0
+    },
+    {
+      "id": "cloud",
+      "title": "Cloud AI architecture",
+      "indexFile": "content/roleprep/topics/cloud/index.json",
+      "subtopics": 3,
+      "live": 0
+    },
+    {
+      "id": "strategy",
+      "title": "AI strategy & value",
+      "indexFile": "content/roleprep/topics/strategy/index.json",
+      "subtopics": 3,
+      "live": 0
+    },
+    {
+      "id": "teams",
+      "title": "Leading AI teams",
+      "indexFile": "content/roleprep/topics/teams/index.json",
+      "subtopics": 3,
+      "live": 0
+    }
+  ],
+  "changelog": [
+    {
+      "version": "0.1.0",
+      "date": "2026-11-03",
+      "note": "Seed: catalogue of 12 topics and the first live sub-topic, RAG & retrieval: Hybrid search & reranking."
+    }
+  ]
+}

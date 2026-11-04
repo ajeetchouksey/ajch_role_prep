@@ -1,0 +1,17 @@
+{
+  "name": "ajch_role_prep",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Role Prep content and its agent kit: AI-role interview practice with Tech, Tech Lead and Leadership bars. Served on aaryaai.dev/roleprep.",
+  "type": "module",
+  "scripts": {
+    "kit": "node scripts/kit.mjs",
+    "kit:check": "node scripts/kit.mjs --check",
+    "validate": "node scripts/validate-content.mjs",
+    "check": "node scripts/validate-content.mjs && node scripts/check-options.mjs",
+    "docs": "node scripts/check-docs.mjs",
+    "catalog": "node scripts/build-catalog.mjs",
+    "plugin": "node scripts/kit.mjs && node scripts/build-plugin.mjs",
+    "diagrams": "node scripts/build-diagrams.mjs"
+  }
+}

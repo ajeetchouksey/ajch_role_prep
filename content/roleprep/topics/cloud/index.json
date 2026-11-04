@@ -1,0 +1,27 @@
+{
+  "schema": "roleprep-topic@2",
+  "schemaVersion": 2,
+  "id": "cloud",
+  "title": "Cloud AI architecture",
+  "taxonomyIds": [],
+  "subtopics": [
+    {
+      "id": "azure-ai-foundry",
+      "title": "Azure AI Foundry",
+      "status": "planned",
+      "file": null
+    },
+    {
+      "id": "reference-architectures",
+      "title": "Reference architectures",
+      "status": "planned",
+      "file": null
+    },
+    {
+      "id": "security-networking",
+      "title": "Security & networking",
+      "status": "planned",
+      "file": null
+    }
+  ]
+}

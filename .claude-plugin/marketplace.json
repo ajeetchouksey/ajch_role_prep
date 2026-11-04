@@ -1,0 +1,12 @@
+{
+  "name": "aaryaai-roleprep",
+  "owner": { "name": "AaryaAI" },
+  "description": "AaryaAI's Role Prep agent kit: write, review, build, test and release AI-role interview practice.",
+  "plugins": [
+    {
+      "name": "roleprep-kit",
+      "source": "./plugin",
+      "description": "Agents, skills, commands and hooks for Role Prep: AI-role interview practice with Tech, Tech Lead and Leadership bars."
+    }
+  ]
+}

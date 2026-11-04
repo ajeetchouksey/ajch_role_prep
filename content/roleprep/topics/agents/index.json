@@ -1,0 +1,33 @@
+{
+  "schema": "roleprep-topic@2",
+  "schemaVersion": 2,
+  "id": "agents",
+  "title": "Agents & orchestration",
+  "taxonomyIds": [],
+  "subtopics": [
+    {
+      "id": "agent-loops-tool-use",
+      "title": "Agent loops & tool use",
+      "status": "planned",
+      "file": null
+    },
+    {
+      "id": "multi-agent-patterns",
+      "title": "Multi-agent patterns",
+      "status": "planned",
+      "file": null
+    },
+    {
+      "id": "human-in-the-loop",
+      "title": "Human-in-the-loop",
+      "status": "planned",
+      "file": null
+    },
+    {
+      "id": "failure-handling-retries",
+      "title": "Failure handling & retries",
+      "status": "planned",
+      "file": null
+    }
+  ]
+}

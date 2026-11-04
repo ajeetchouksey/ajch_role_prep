@@ -1,0 +1,33 @@
+{
+  "schema": "roleprep-topic@2",
+  "schemaVersion": 2,
+  "id": "genai",
+  "title": "GenAI foundations",
+  "taxonomyIds": [],
+  "subtopics": [
+    {
+      "id": "tokens-context-windows",
+      "title": "Tokens & context windows",
+      "status": "planned",
+      "file": null
+    },
+    {
+      "id": "model-selection",
+      "title": "Model selection",
+      "status": "planned",
+      "file": null
+    },
+    {
+      "id": "sampling-determinism",
+      "title": "Sampling & determinism",
+      "status": "planned",
+      "file": null
+    },
+    {
+      "id": "fine-tuning-vs-prompting",
+      "title": "Fine-tuning vs prompting",
+      "status": "planned",
+      "file": null
+    }
+  ]
+}

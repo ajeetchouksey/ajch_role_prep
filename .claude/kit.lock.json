@@ -1,0 +1,162 @@
+{
+  "framework": "0.2.0",
+  "vertical": "roleprep",
+  "files": {
+    ".claude/agents/roleprep-backend-engineer.md": {
+      "sha": "a97f5920a64e16da",
+      "source": "kit/agents/roleprep-backend-engineer.md"
+    },
+    ".claude/agents/roleprep-docs-writer.md": {
+      "sha": "0adf8ad6bb255e64",
+      "source": "kit/agents/roleprep-docs-writer.md"
+    },
+    ".claude/agents/roleprep-frontend-engineer.md": {
+      "sha": "e71129aec69244ec",
+      "source": "kit/agents/roleprep-frontend-engineer.md"
+    },
+    ".claude/agents/roleprep-growth-analyst.md": {
+      "sha": "06acc04afb5d3dba",
+      "source": "kit/agents/roleprep-growth-analyst.md"
+    },
+    ".claude/agents/roleprep-lead.md": {
+      "sha": "364d636c2e1c97d9",
+      "source": "kit/agents/roleprep-lead.md"
+    },
+    ".claude/agents/roleprep-publisher.md": {
+      "sha": "da0ec3ec27d19dea",
+      "source": "kit/agents/roleprep-publisher.md"
+    },
+    ".claude/agents/roleprep-qa.md": {
+      "sha": "e2a3d747e96027b7",
+      "source": "kit/agents/roleprep-qa.md"
+    },
+    ".claude/agents/roleprep-ux-designer.md": {
+      "sha": "8d7205100004bf85",
+      "source": "kit/agents/roleprep-ux-designer.md"
+    },
+    ".claude/agents/roleprep-writer.md": {
+      "sha": "000b2dd0ffad76e9",
+      "source": "kit/agents/roleprep-writer.md"
+    },
+    ".claude/agents/rubric-reviewer.md": {
+      "sha": "ab24992ea6240019",
+      "source": "kit/agents/rubric-reviewer.md"
+    },
+    ".claude/agents/scoring-calibrator.md": {
+      "sha": "b273875642ccb75e",
+      "source": "kit/agents/scoring-calibrator.md"
+    },
+    ".claude/commands/build-story.md": {
+      "sha": "ff30397a165a2dee",
+      "source": "kit/commands/build-story.md"
+    },
+    ".claude/commands/doc.md": {
+      "sha": "de929214090dba76",
+      "source": "ajch_agent_framework/commands/doc.mjs"
+    },
+    ".claude/commands/new-subtopic.md": {
+      "sha": "a8079ed6c47222fa",
+      "source": "kit/commands/new-subtopic.md"
+    },
+    ".claude/commands/pilot-scoring.md": {
+      "sha": "c612ac5cbfa73748",
+      "source": "kit/commands/pilot-scoring.md"
+    },
+    ".claude/commands/qa.md": {
+      "sha": "c36bd6e63dac7344",
+      "source": "kit/commands/qa.md"
+    },
+    ".claude/commands/refresh-topic.md": {
+      "sha": "ca0f9f1bd78e946b",
+      "source": "kit/commands/refresh-topic.md"
+    },
+    ".claude/commands/release.md": {
+      "sha": "4c6fbc5b193a3618",
+      "source": "kit/commands/release.md"
+    },
+    ".claude/commands/review.md": {
+      "sha": "0c40196dbb81c86a",
+      "source": "kit/commands/review.md"
+    },
+    ".claude/commands/ux-review.md": {
+      "sha": "d03767ef57b820c1",
+      "source": "kit/commands/ux-review.md"
+    },
+    ".claude/hooks/guard-protected.mjs": {
+      "sha": "66be45a54134facc",
+      "source": "ajch_agent_framework/hooks/guard-protected.mjs"
+    },
+    ".claude/hooks/kit-config.json": {
+      "sha": "2e88004c802a1d16",
+      "source": "kit.json"
+    },
+    ".claude/hooks/validate-on-write.mjs": {
+      "sha": "59128894dc4d0f6f",
+      "source": "ajch_agent_framework/hooks/validate-on-write.mjs"
+    },
+    ".claude/skills/aaryaai-brand/SKILL.md": {
+      "sha": "8c95ce567681e76d",
+      "source": "kit/skills/aaryaai-brand/SKILL.md"
+    },
+    ".claude/skills/docs-standard/SKILL.md": {
+      "sha": "1bc44a61f3543084",
+      "source": "ajch_agent_framework/skills/docs-standard.mjs"
+    },
+    ".claude/skills/level-voice/SKILL.md": {
+      "sha": "2d074c231ca430ad",
+      "source": "kit/skills/level-voice/SKILL.md"
+    },
+    ".claude/skills/model-policy/SKILL.md": {
+      "sha": "75e0b88587bc016d",
+      "source": "ajch_agent_framework/skills/model-policy.mjs"
+    },
+    ".claude/skills/moment-craft/SKILL.md": {
+      "sha": "83256332a64e76b2",
+      "source": "kit/skills/moment-craft/SKILL.md"
+    },
+    ".claude/skills/roleprep-content-standard/SKILL.md": {
+      "sha": "f08d37499c80d4d5",
+      "source": "kit/skills/roleprep-content-standard/SKILL.md"
+    },
+    ".claude/skills/roleprep-engineering/SKILL.md": {
+      "sha": "c34d25fbd3f8b7f5",
+      "source": "kit/skills/roleprep-engineering/SKILL.md"
+    },
+    ".claude/skills/roleprep-ux-standard/SKILL.md": {
+      "sha": "7c764212dd31e891",
+      "source": "kit/skills/roleprep-ux-standard/SKILL.md"
+    },
+    ".claude/skills/rubric-craft/SKILL.md": {
+      "sha": "ed1c45b87c6e345d",
+      "source": "kit/skills/rubric-craft/SKILL.md"
+    },
+    ".claude/skills/scoring-contract/SKILL.md": {
+      "sha": "197e9e768585fe86",
+      "source": "kit/skills/scoring-contract/SKILL.md"
+    },
+    ".claude/skills/scoring-contract/references/feedback-contract.schema.json": {
+      "sha": "8be3a642a7719bfa",
+      "source": "kit/skills/scoring-contract/references/feedback-contract.schema.json"
+    },
+    ".claude/skills/scoring-contract/references/feedback-prompt.md": {
+      "sha": "e3778bee76460950",
+      "source": "kit/skills/scoring-contract/references/feedback-prompt.md"
+    },
+    ".claude/skills/svg-diagram-craft/SKILL.md": {
+      "sha": "1a1555620d7edec7",
+      "source": "ajch_agent_framework/skills/svg-diagram-craft.mjs"
+    },
+    "scripts/build-diagrams.mjs": {
+      "sha": "39719f5ffbbb5418",
+      "source": "ajch_agent_framework/tools/build-diagrams.mjs"
+    },
+    "scripts/check-docs.mjs": {
+      "sha": "3f63237aa3063405",
+      "source": "ajch_agent_framework/checks/check-docs.mjs"
+    },
+    "scripts/diagram-kit.mjs": {
+      "sha": "b3bdba4ea38b9792",
+      "source": "ajch_agent_framework/tools/diagram-kit.mjs"
+    }
+  }
+}

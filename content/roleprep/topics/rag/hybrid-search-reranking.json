@@ -1,0 +1,416 @@
+{
+  "schema": "roleprep-subtopic@2",
+  "schemaVersion": 2,
+  "id": "rag.hybrid-search-reranking",
+  "topicId": "rag",
+  "title": "Hybrid search & reranking",
+  "contentVersion": "0.1.0",
+  "updatedAt": "2026-11-03",
+  "links": {
+    "skillup": [
+      "ab100:d2"
+    ],
+    "holLabs": [],
+    "useCases": [
+      "hr-policy-assistant"
+    ]
+  },
+  "moments": [
+    {
+      "id": "cold-60",
+      "kind": "know-cold",
+      "title": "Hybrid search and reranking in 60 seconds",
+      "views": {
+        "tech": {
+          "asked": "Walk me through how retrieval works in a RAG system you've built.",
+          "points": [
+            "Two retrievers in parallel: BM25 catches exact terms like error codes, SKUs and policy IDs; dense embeddings catch paraphrases. Merge the lists with reciprocal rank fusion.",
+            "Retrieve wide, then narrow: take the top 50 to 100 candidates, rerank them with a cross-encoder that reads query and passage together, and keep the best 5 to 10.",
+            "The reranker buys precision at a latency cost that grows with the candidate count, so the candidate count is the knob you tune.",
+            "Measure each stage on its own: recall@50 for the first stage, nDCG@10 after reranking."
+          ],
+          "short": "Retrieval is two stages. The first is about recall: I run BM25 and a dense embedding search in parallel and merge them with reciprocal rank fusion, because keywords catch exact IDs and embeddings catch paraphrases. The second is about precision: a cross-encoder reranks the top 50 and I pass the best 5 to the model. I evaluate each stage separately, recall@50 and nDCG@10, so when an answer is wrong I know which stage to fix."
+        },
+        "lead": {
+          "asked": "How is retrieval structured in your platform, and how does your team keep it healthy?",
+          "points": [
+            "Retrieval is split into a recall stage (hybrid search) and a precision stage (reranker), each with its own metric and owner.",
+            "Every change runs against the same labelled set of real questions; a drop in recall@50 or nDCG@10 blocks the release.",
+            "Operational basics: version the embedding model with the index, re-embed when the model changes, keep keyword analysers consistent."
+          ],
+          "short": "We run retrieval in two stages that we measure separately: hybrid search for recall, a cross-encoder reranker for precision. That split matters for the team: when answers go wrong we can tell quickly whether a document is missing or badly ranked, and route it to the right person. Every change runs against a labelled set of real questions in CI, and the embedding model is versioned with the index so we never mix vectors."
+        },
+        "leadership": {
+          "asked": "In plain terms, why do AI assistants sometimes answer from the wrong document, and what's the fix?",
+          "points": [
+            "Most wrong-source answers are a search problem, not a model problem: the assistant is only as right as the documents it is given.",
+            "Better search, combining keyword and meaning-based search and re-checking the top results, costs fractions of a cent and a fraction of a second per question.",
+            "That is far cheaper than moving to a bigger model, and it is judged on one number from our own audit: the share of answers citing the right source."
+          ],
+          "short": "When an assistant answers from the wrong document, it's usually because search handed it the wrong document. The fix is better search: combine keyword and meaning-based search, then re-check the top results. It's cheap per question and adds a fraction of a second, which beats paying for a bigger model. I'd judge it on one number: the share of answers that cite the right source on our own audit."
+        }
+      }
+    },
+    {
+      "id": "qa-when",
+      "kind": "question",
+      "title": "When do you add a reranker?",
+      "views": {
+        "tech": {
+          "asked": "When would you add a reranker to a RAG pipeline?",
+          "testing": "Whether you diagnose before you add components. Can you tell a recall problem from a ranking problem?",
+          "structure": [
+            "Diagnose: recall or ranking?",
+            "Fix the right stage",
+            "Measure each stage",
+            "Budget the latency"
+          ],
+          "strong": "Only after I've checked where retrieval fails. I take failing questions and look at where the right chunk lands. If it's in the top 50 but not the top 5, that's a ranking problem and a cross-encoder reranker is the right tool: retrieve 50, rerank, keep 5. If it's not in the top 50 at all, a reranker can't help. That's recall, so I'd look at chunking, hybrid search or query rewriting. Then I measure both stages on a labelled set, recall@50 and nDCG@10, plus end-to-end citation accuracy, and check the latency cost, typically 100 to 300 ms for 50 candidates.",
+          "weak": "Rerankers improve accuracy, so I'd add one by default, something like Cohere Rerank, and see if the answers get better.",
+          "weakWhy": "No diagnosis and no metric, and it assumes a reranker can fix documents that were never retrieved.",
+          "followUps": [
+            "The right chunk isn't in your top 50. Now what?",
+            "Where does your labelled evaluation data come from?",
+            "How would you cut the reranker's latency?"
+          ],
+          "flags": [
+            "\"It just makes results better\"",
+            "No mention of latency or cost",
+            "Treating the reranker as a fix for missing documents"
+          ],
+          "say": [
+            "\"First I'd check whether it's a recall or a ranking problem.\"",
+            "\"Retrieve wide, rerank, keep few.\""
+          ],
+          "avoid": [
+            "\"We'd just plug in a reranker.\"",
+            "Naming a vendor before naming the problem"
+          ],
+          "rubric": [
+            "Separated recall from ranking",
+            "Said a reranker can't fix missing documents",
+            "Named a metric for each stage",
+            "Mentioned the latency cost"
+          ]
+        },
+        "lead": {
+          "asked": "Your team wants to add a reranker. How do you decide if it's worth it?",
+          "testing": "How you make technical decisions with a team: evidence first, success criteria agreed up front, and owning the trade-off.",
+          "structure": [
+            "Ask for the failure analysis",
+            "Agree success and budget",
+            "Test offline, then behind a flag",
+            "Make it a regression gate"
+          ],
+          "strong": "I'd ask the team for the failure analysis first: on failing questions, is the right passage retrieved but ranked low? If yes, a reranker is a good bet. Before anyone builds, we agree what success looks like, say nDCG@10 up and citation errors down on our labelled set, plus a latency budget like p95 under 2 seconds. We test offline, then ship behind a flag to a slice of traffic. If it meets the bar it stays, and that evaluation set becomes a CI gate so retrieval can't silently regress.",
+          "weak": "If the team thinks it'll help, I'd let them try it and see.",
+          "weakWhy": "Sounds supportive, but there's no decision rule, so nobody can tell later whether it worked.",
+          "followUps": [
+            "Precision is up 8% but p95 latency went from 1.2s to 1.6s. Do you ship?",
+            "Two engineers disagree: reranker or fine-tuned embeddings. How do you settle it?"
+          ],
+          "flags": [
+            "Deciding by opinion or seniority",
+            "No latency or cost budget",
+            "No plan to catch regressions"
+          ],
+          "say": [
+            "\"Let's agree the bar before we build.\"",
+            "\"The eval set becomes the gate.\""
+          ],
+          "avoid": [
+            "\"I'd trust their judgement\" with nothing after it"
+          ],
+          "rubric": [
+            "Asked for evidence before building",
+            "Set success criteria and a latency budget",
+            "Staged the rollout behind a flag",
+            "Turned the eval into a regression gate"
+          ]
+        },
+        "leadership": {
+          "asked": "Customers say our assistant confidently quotes the wrong policy. The team proposes a reranker. What do you need to know to approve it?",
+          "testing": "Whether you connect a technical fix to business risk, cost and a measurable outcome, without getting lost in detail.",
+          "structure": [
+            "Size the problem",
+            "Cost of the fix",
+            "How we'll know it worked",
+            "What we do meanwhile"
+          ],
+          "strong": "Four things. How big is the problem: what share of answers cite the wrong source, and what does that cost us in complaints or compliance exposure? What the fix costs: engineering weeks, cost per question and added response time. How we'll know it worked: a target on our own audit, for example wrong-source answers from 15% to under 3% within a month. And what we do meanwhile: show the source and its date on every answer, and route high-risk topics to a person. If the numbers hold, it's an easy yes, because it's far cheaper than a bigger model.",
+          "weak": "I'd trust the engineering team's recommendation and approve it.",
+          "weakWhy": "Leadership interviews test judgement. Approving without a target or an interim risk plan shows neither.",
+          "followUps": [
+            "The fix only gets us to 6%. Is that good enough?",
+            "How would you explain this risk to the legal team?"
+          ],
+          "flags": [
+            "Diving into model names",
+            "No target or date",
+            "Ignoring the risk while the fix is built"
+          ],
+          "say": [
+            "\"What does a wrong answer cost us today?\"",
+            "\"Here's the number I'll hold us to.\""
+          ],
+          "avoid": [
+            "Technical terms you don't translate"
+          ],
+          "rubric": [
+            "Sized the problem in business terms",
+            "Asked about cost and effort",
+            "Set a measurable target and date",
+            "Covered the interim risk"
+          ]
+        }
+      }
+    },
+    {
+      "id": "push-bigger",
+      "kind": "pushback",
+      "title": "\"Why not a bigger model instead?\"",
+      "views": {
+        "tech": {
+          "line": "Why not just switch to a bigger embedding model instead of adding a reranker?",
+          "context": "Asked right after you proposed a reranker. They want to see whether you understand the two stages or are repeating a pattern.",
+          "options": [
+            {
+              "text": "Good point. A larger embedding model captures more nuance in both the query and the documents, so the right passage should land higher on its own. It also keeps the pipeline simpler, one model instead of two, so I'd try the bigger model first and add a reranker only if that falls short.",
+              "verdict": "weak",
+              "why": "It concedes without evidence and assumes better embeddings fix ranking, when the two stages solve different problems."
+            },
+            {
+              "text": "They fix different stages. Embeddings decide what gets retrieved; a reranker reads the query and each candidate together, so it ranks more precisely. A bigger embedding model can lift recall, but it means re-embedding the corpus and still scores query and passage separately. I'd run both on the same eval set and pick on the numbers.",
+              "verdict": "strong",
+              "why": "Explains the mechanism, concedes what's true about the alternative, and proposes a fair test."
+            },
+            {
+              "text": "Rerankers are where the field has moved: most production RAG stacks now use one, and vendors ship them as a managed service, so it's the lower-risk choice. A bigger embedding model also forces a full re-index, which we'd want to avoid this quarter, so I'd go straight to the reranker.",
+              "verdict": "weak",
+              "why": "A trend is not a reason. The re-index cost is real, but there is still no mechanism and no test."
+            }
+          ],
+          "takeaway": "Hold your position with a mechanism, concede what's true about the alternative, and offer a test."
+        },
+        "lead": {
+          "line": "One of your engineers says reranking is overkill and we should fine-tune the embeddings instead. How do you settle it?",
+          "context": "They're testing how you resolve technical disagreements, not who is right.",
+          "options": [
+            {
+              "text": "I'd make the call myself, since I'm accountable for the outcome. I've seen rerankers work well on similar projects, so I'd go with the reranker, explain my reasoning to the engineer, and ask them to support the decision so the team can keep moving this sprint.",
+              "verdict": "weak",
+              "why": "Authority instead of evidence. It settles the argument but costs the team's trust."
+            },
+            {
+              "text": "Fine-tuning sounds like the more thorough fix, and the engineer clearly cares about it, so I'd let them run with it. Ownership builds motivation, and if it doesn't improve answers within the sprint we can still fall back to adding a reranker afterwards.",
+              "verdict": "weak",
+              "why": "Picks a side on motivation, with no success criteria and no comparison."
+            },
+            {
+              "text": "Both are reasonable and they aren't exclusive. I'd timebox a spike of each against the same labelled set, with metrics and a latency budget agreed first. Fine-tuning also needs training data and retraining whenever content shifts, so maintenance cost goes on the scorecard too.",
+              "verdict": "strong",
+              "why": "Turns the disagreement into an experiment with agreed criteria, and adds the cost the team might miss."
+            }
+          ],
+          "takeaway": "Settle disagreements with an agreed test, and put long-term maintenance cost on the scorecard."
+        },
+        "leadership": {
+          "line": "A vendor says their larger model fixes wrong answers without any of this search work. Do we buy it?",
+          "context": "They want to see whether you can evaluate a vendor claim without being the engineer.",
+          "options": [
+            {
+              "text": "Yes, if the vendor is one of the major providers. Their models are trained on far more data than we could use, the claim is likely tested, and buying it saves months of engineering time that we can spend on features customers actually see.",
+              "verdict": "weak",
+              "why": "Takes the claim on trust. A bigger model still answers from whatever documents it is given."
+            },
+            {
+              "text": "Not on the claim alone. I'd ask them to run on our audit set and compare against the search fix on three numbers: right-source rate, cost per answer and response time. If the wrong document goes in, a bigger model usually just sounds more convincing.",
+              "verdict": "strong",
+              "why": "Turns the pitch into a test on your own data and names the decision metrics."
+            },
+            {
+              "text": "Not yet. Our policy is to build core AI capabilities in-house, because owning the stack keeps our data private and avoids lock-in, so I'd ask the team to keep improving our own search rather than evaluate an outside model.",
+              "verdict": "partial",
+              "why": "The scepticism is right, but a blanket policy isn't judgement. Test the claim instead."
+            }
+          ],
+          "takeaway": "Test vendor claims on your own data, against the cheaper alternative, using the metrics you'll report."
+        }
+      }
+    },
+    {
+      "id": "chal-hr",
+      "kind": "challenge",
+      "title": "Fix wrong-policy citations",
+      "scenario": "An internal HR policy assistant answers fluently, but in a 200-question audit 15% of answers cite the wrong policy, often an older version (the 2023 leave policy instead of the 2025 one). Retrieval is dense embeddings only, top 5. You have two weeks.",
+      "views": {
+        "tech": {
+          "asked": "How do you fix it? Talk through how you'd diagnose it, what you'd change, and how you'd prove it worked.",
+          "frame": [
+            "Clarify",
+            "Diagnose",
+            "Fix",
+            "Prove"
+          ],
+          "rubric": [
+            "Checked whether the right policy appears in a wider top-k (recall vs ranking)",
+            "Spotted the versioning issue: filter on effective date or remove superseded documents",
+            "Added keyword search for exact policy names and IDs",
+            "Reranked a wider candidate set",
+            "Re-ran the same 200-question audit before and after"
+          ],
+          "model": "I'd start with the 30 failures. For each, does the right 2025 policy appear in the top 50? Then I'd check the index: if the 2023 and 2025 versions are both live with near-identical text, embeddings can't tell them apart. So the first fix is data: tag every chunk with its effective date and status, and filter out superseded versions at query time. Second, add BM25 so exact policy names and IDs match, fused with the dense results. Third, rerank the top 50 down to 5. I'd re-run the same audit after each change so I know which one moved the number, and keep an eye on latency.",
+          "followUp": "Wrong citations drop to 4%, but p95 latency doubled. What now?"
+        },
+        "lead": {
+          "asked": "You have a team of three and two weeks. Plan it. What happens first, and how do you decide you're done?",
+          "frame": [
+            "Diagnose",
+            "Split the work",
+            "Define done",
+            "Ship safely"
+          ],
+          "rubric": [
+            "Started with a failure analysis before building",
+            "Split the work into metadata, retrieval and evaluation",
+            "Defined done: a target on the audit plus a latency budget",
+            "Shipped behind a flag or in stages",
+            "Kept the audit set as a regression gate"
+          ],
+          "model": "Days one and two, the whole team does failure analysis on the 30 bad answers, so we fix the cause, not the symptom. Then I split it: one engineer owns document metadata (effective dates, removing superseded versions), one owns retrieval (hybrid search and reranking), one owns evaluation, turning the audit into a labelled set we can rerun daily. We agree done up front: wrong-source under 3% on the audit and p95 under 2 seconds. We ship behind a flag in week two, and the audit set stays as a CI gate.",
+          "followUp": "At the end of week one, the metadata fix alone got you to 5%. Do you still build the reranker?"
+        },
+        "leadership": {
+          "asked": "You're presenting the plan to the HR director. What's the plan, what's the risk while it's being fixed, and how will you report progress?",
+          "frame": [
+            "Impact",
+            "Plan",
+            "Interim risk",
+            "Reporting"
+          ],
+          "rubric": [
+            "Stated the impact in business terms: employees get wrong advice",
+            "Gave an interim mitigation: show source and date, route sensitive topics to HR",
+            "Set a clear target and date",
+            "Explained cost and effort plainly",
+            "Committed to a reporting rhythm"
+          ],
+          "model": "Today about 1 in 7 answers points employees to the wrong policy, mostly outdated versions. That's a trust and compliance risk. Starting now, every answer shows which policy it used and its date, and questions about leave, pay and disciplinary matters go to HR. Over two weeks the team will remove outdated policies from search and improve how it finds the right one. The target is under 3% wrong-source answers on our audit by the end of the month. I'll report the audit score weekly, and there's no new licence cost.",
+          "followUp": "The director asks: why should we trust the assistant at all after this?"
+        }
+      }
+    },
+    {
+      "id": "qa-prove",
+      "kind": "question",
+      "title": "How do you know it helped?",
+      "views": {
+        "tech": {
+          "asked": "How do you know reranking actually helped?",
+          "testing": "Evaluation rigour. Do you measure each stage and the end result, or go by feel?",
+          "structure": [
+            "Labelled set from real queries",
+            "Stage metrics",
+            "End-to-end metrics",
+            "Online signals and cost"
+          ],
+          "strong": "I build a labelled set from real user queries, 150 to 300 of them, each mapped to the passages that answer it. I measure the first stage with recall@50 and the reranked list with nDCG@10 or MRR, before and after. Then end-to-end: citation accuracy and faithfulness, scored by an LLM judge I've checked against human labels on a sample. Online, I watch thumbs-down and escalation rates, plus p95 latency and cost per query. If nDCG goes up but citation accuracy doesn't, the bottleneck is somewhere else.",
+          "weak": "We tried a bunch of questions and the answers looked better.",
+          "weakWhy": "Anecdotes don't survive the next question. No baseline, no metric, no sample size.",
+          "followUps": [
+            "Your LLM judge disagrees with human raters 20% of the time. What do you do?",
+            "How do you keep the labelled set from going stale?"
+          ],
+          "flags": [
+            "\"It looked better\"",
+            "Only end-to-end metrics, nothing per stage",
+            "Trusting an LLM judge without checking it"
+          ],
+          "say": [
+            "\"Before and after, on the same labelled set.\"",
+            "\"I check the judge against humans first.\""
+          ],
+          "avoid": [
+            "Quoting a metric you can't define"
+          ],
+          "rubric": [
+            "Built a labelled set from real queries",
+            "Named stage metrics (recall@k, nDCG or MRR)",
+            "Measured the end result, not just retrieval",
+            "Checked the LLM judge against humans",
+            "Watched latency and cost"
+          ]
+        },
+        "lead": {
+          "asked": "How do you make sure retrieval quality doesn't silently regress after you ship?",
+          "testing": "Whether you build systems and habits that catch problems, instead of relying on someone noticing.",
+          "structure": [
+            "Golden set in CI",
+            "Thresholds that block",
+            "Online monitoring",
+            "Ownership and refresh"
+          ],
+          "strong": "The labelled set runs in CI on every change to chunking, embeddings, the reranker or prompts, with thresholds that block the merge if recall@50 or nDCG@10 drops by more than a point or two. In production we track thumbs-down, escalations and no-answer rate on a dashboard with alerts. One person owns retrieval quality each sprint, and every month we add new failure cases to the golden set so it keeps up with the content.",
+          "weak": "We'd keep an eye on user feedback.",
+          "weakWhy": "Feedback arrives late and is noisy, and nothing stops a bad change from shipping.",
+          "followUps": [
+            "The corpus doubled after a merger. What breaks in your setup?",
+            "A threshold keeps blocking good changes. What do you do?"
+          ],
+          "flags": [
+            "Relying on users to report problems",
+            "No owner",
+            "A golden set that never changes"
+          ],
+          "say": [
+            "\"It's a gate, not a report.\"",
+            "\"Every production failure becomes a test case.\""
+          ],
+          "avoid": [
+            "\"We monitor it\" with no specifics"
+          ],
+          "rubric": [
+            "Golden set runs in CI",
+            "Thresholds block regressions",
+            "Online signals with alerts",
+            "A named owner and a refresh rhythm"
+          ]
+        },
+        "leadership": {
+          "asked": "How will you show me whether this investment paid off?",
+          "testing": "Whether you report outcomes leaders care about, honestly, against a baseline.",
+          "structure": [
+            "One outcome metric",
+            "Baseline vs now",
+            "The cost side",
+            "A reporting rhythm"
+          ],
+          "strong": "One headline number: the share of answers citing the right, current policy on our monthly audit, against the 85% baseline. Next to it, the business effect: HR escalations and employee complaints about wrong answers. And the cost side: engineering time spent and cost per answer. I'd report it monthly on one page, including what didn't improve, so you can decide whether to invest further.",
+          "weak": "Users seem happier and the team is confident it's working.",
+          "weakWhy": "No baseline and no number. Leadership interviews reward honest, measured reporting.",
+          "followUps": [
+            "The audit improved but complaints didn't drop. What does that tell you?"
+          ],
+          "flags": [
+            "Vanity metrics like total questions answered",
+            "No baseline",
+            "Only good news"
+          ],
+          "say": [
+            "\"Against the baseline of 85%.\"",
+            "\"Including what didn't move.\""
+          ],
+          "avoid": [
+            "Model metrics like nDCG in a leadership answer"
+          ],
+          "rubric": [
+            "One clear outcome metric",
+            "Compared against a baseline",
+            "Included the cost",
+            "Set a reporting rhythm and admitted gaps"
+          ]
+        }
+      }
+    }
+  ]
+}

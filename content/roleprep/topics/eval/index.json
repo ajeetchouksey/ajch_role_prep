@@ -1,0 +1,33 @@
+{
+  "schema": "roleprep-topic@2",
+  "schemaVersion": 2,
+  "id": "eval",
+  "title": "Evaluation & quality",
+  "taxonomyIds": [],
+  "subtopics": [
+    {
+      "id": "offline-eval-sets",
+      "title": "Offline eval sets",
+      "status": "planned",
+      "file": null
+    },
+    {
+      "id": "llm-as-judge",
+      "title": "LLM-as-judge",
+      "status": "planned",
+      "file": null
+    },
+    {
+      "id": "online-signals-a-b-tests",
+      "title": "Online signals & A/B tests",
+      "status": "planned",
+      "file": null
+    },
+    {
+      "id": "regression-gates",
+      "title": "Regression gates",
+      "status": "planned",
+      "file": null
+    }
+  ]
+}
