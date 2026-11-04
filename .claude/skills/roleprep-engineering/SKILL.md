@@ -81,6 +81,13 @@ the first AI route.
 so the tool is the reliable path. Streamable HTTP, no login, IP rate limits,
 content from the deployed build. Write tools (`record_attempt`) wait for OAuth (RP-9.3).
 
+## Dependencies
+
+Pin exact versions at least two weeks old. After any dependency change on Windows,
+regenerate the lockfile from scratch (`rm -rf node_modules package-lock.json && npm install`
+in `app/`): an incrementally updated Windows lockfile drops Linux-only optional
+packages and `npm ci` fails in CI. Check with `npm ci --dry-run` before pushing.
+
 ## Checks before handing over
 
 In `app/`: `npm run typecheck`, `npm run build`, `npm run check` (pre-rendered
