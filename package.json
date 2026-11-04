@@ -8,10 +8,12 @@
     "kit": "node scripts/kit.mjs",
     "kit:check": "node scripts/kit.mjs --check",
     "validate": "node scripts/validate-content.mjs",
-    "check": "node scripts/validate-content.mjs && node scripts/check-options.mjs",
+    "check": "node scripts/validate-content.mjs && node scripts/check-options.mjs && node scripts/build-related.mjs --check",
     "docs": "node scripts/check-docs.mjs",
     "catalog": "node scripts/build-catalog.mjs",
     "plugin": "node scripts/kit.mjs && node scripts/build-plugin.mjs",
-    "diagrams": "node scripts/build-diagrams.mjs"
+    "diagrams": "node scripts/build-diagrams.mjs",
+    "related": "node scripts/build-related.mjs",
+    "related:fetch": "node scripts/build-related.mjs --fetch"
   }
 }

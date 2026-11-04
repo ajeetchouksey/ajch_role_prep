@@ -33,6 +33,8 @@ jobs:
         run: node scripts/validate-content.mjs
       - name: Pushback giveaway checks
         run: node scripts/check-options.mjs
+      - name: Links to SkillUp, use cases, blog and labs are current
+        run: node scripts/build-related.mjs --check
       - name: Framework version from kit.json
         id: kit
         run: echo "version=$(node -p "require('./kit.json').framework")" >> "$GITHUB_OUTPUT"

@@ -3,7 +3,12 @@
   "schemaVersion": 2,
   "id": "genai",
   "title": "GenAI foundations",
-  "taxonomyIds": [],
+  "taxonomyIds": [
+    "llm",
+    "fine-tuning",
+    "prompt-engineering",
+    "hallucination"
+  ],
   "subtopics": [
     {
       "id": "tokens-context-windows",

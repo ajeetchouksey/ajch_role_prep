@@ -1,7 +1,8 @@
 import { useState } from 'react';
 import { Link, data } from 'react-router';
 import type { Route } from './+types/subtopic';
-import { getSubtopic, getTopic } from '~/lib/content.server';
+import { getRelated, getSubtopic, getTopic } from '~/lib/content.server';
+import { RelatedLinks } from '~/lib/related-links';
 import { KIND_LABEL, LEVELS, type LevelId } from '~/lib/content';
 
 // Public sub-topic page (screen S12): pre-rendered for search. It shows what each
@@ -25,6 +26,7 @@ export function loader({ params }: Route.LoaderArgs) {
     id: params.subtopic,
     title: s.title,
     updatedAt: s.updatedAt,
+    related: getRelated(params.topic, params.subtopic),
     moments: s.moments.map((m) => ({
       id: m.id, kind: m.kind, title: m.title, scenario: m.scenario,
       views: Object.fromEntries(LEVELS.map(({ id }) => {
@@ -70,6 +72,14 @@ export default function SubtopicPage({ loaderData: s }: Route.ComponentProps) {
           );
         })}
       </ol>
+
+      {s.related && (
+        <section aria-labelledby="deeper" className="space-y-3">
+          <h2 id="deeper" className="font-display text-2xl font-bold">Go deeper on AaryaAI</h2>
+          <p className="text-mist">Close a gap before your interview: the notes, labs, real deployments and posts that cover these moments.</p>
+          <RelatedLinks related={s.related} />
+        </section>
+      )}
 
       <div className="rounded-2xl border border-indigo bg-indigo/15 p-6">
         <h2 className="font-display text-2xl font-bold">Answer before you read</h2>

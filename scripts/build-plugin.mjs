@@ -25,7 +25,7 @@ mkdirSync(join(OUT, '.claude-plugin'), { recursive: true });
 for (const dir of ['agents', 'skills', 'commands']) cpSync(join(ROOT, '.claude', dir), join(OUT, dir), { recursive: true });
 cpSync(join(ROOT, '.claude', 'hooks'), join(OUT, 'hooks'), { recursive: true });
 mkdirSync(join(OUT, 'scripts'), { recursive: true });
-for (const f of ['validate-content.mjs', 'check-options.mjs', 'check-docs.mjs', 'build-catalog.mjs']) cpSync(join(ROOT, 'scripts', f), join(OUT, 'scripts', f));
+for (const f of ['validate-content.mjs', 'check-options.mjs', 'check-docs.mjs', 'build-catalog.mjs', 'build-related.mjs']) cpSync(join(ROOT, 'scripts', f), join(OUT, 'scripts', f));
 
 writeFileSync(join(OUT, '.claude-plugin', 'plugin.json'), JSON.stringify({
   name: 'roleprep-kit',

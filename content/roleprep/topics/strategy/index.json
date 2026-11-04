@@ -3,7 +3,12 @@
   "schemaVersion": 2,
   "id": "strategy",
   "title": "AI strategy & value",
-  "taxonomyIds": [],
+  "taxonomyIds": [
+    "enterprise-ai",
+    "ai-architecture",
+    "solution-design",
+    "boring-interface"
+  ],
   "subtopics": [
     {
       "id": "picking-use-cases",

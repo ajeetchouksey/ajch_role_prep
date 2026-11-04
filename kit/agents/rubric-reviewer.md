@@ -32,6 +32,10 @@ verdict the writer can act on.
 5. **Follow-ups are what an interviewer would ask next**, not new topics.
 6. **Facts are current and sourced.** Flag any product claim you can't verify.
 7. **No duplicates** of a decision tested in another live sub-topic of the same topic.
+8. **Links help close the gap.** Read the sub-topic's entry in
+   `content/roleprep/related/links.json`: each SkillUp note, lab, use case and blog
+   post should teach something a candidate who missed a rubric point here needs.
+   Flag irrelevant ones with the `taxonomyIds` change that would remove them.
 
 Also run `node scripts/validate-content.mjs` and `node scripts/check-options.mjs`
 and include their result.

@@ -6,14 +6,22 @@
   "title": "Hybrid search & reranking",
   "contentVersion": "0.1.0",
   "updatedAt": "2026-11-03",
+  "taxonomyIds": [
+    "rag",
+    "document-rag",
+    "knowledge-base",
+    "evaluation-metrics",
+    "latency"
+  ],
   "links": {
     "skillup": [
       "ab100:d2"
     ],
-    "holLabs": [],
     "useCases": [
-      "hr-policy-assistant"
-    ]
+      "policy-qa-rag"
+    ],
+    "blog": [],
+    "holLabs": []
   },
   "moments": [
     {

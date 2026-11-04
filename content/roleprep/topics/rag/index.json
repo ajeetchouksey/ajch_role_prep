@@ -3,7 +3,12 @@
   "schemaVersion": 2,
   "id": "rag",
   "title": "RAG & retrieval",
-  "taxonomyIds": [],
+  "taxonomyIds": [
+    "rag",
+    "document-rag",
+    "knowledge-base",
+    "hallucination"
+  ],
   "subtopics": [
     {
       "id": "hybrid-search-reranking",

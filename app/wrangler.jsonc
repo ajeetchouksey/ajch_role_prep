@@ -11,7 +11,7 @@
     // Unmatched paths reach the Worker, which serves the app shell for page
     // navigations (the pre-rendered home page must not stand in for app routes).
     "not_found_handling": "none",
-    "html_handling": "auto-trailing-slash",
+    "html_handling": "drop-trailing-slash",
     "run_worker_first": ["/api/*"]
   },
   "observability": { "enabled": true }

@@ -32,6 +32,7 @@ for (const t of catalog.topics) {
   for (const s of topic.subtopics.filter((x) => x.status === 'live')) {
     const sub = read(join(app, '..', s.file));
     expect(`/topics/${t.id}/${s.id}`, sub.moments[0].views.tech.asked); pages++;
+    expect(`/topics/${t.id}/${s.id}`, 'Go deeper on AaryaAI');
   }
 }
 

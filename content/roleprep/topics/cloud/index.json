@@ -3,7 +3,14 @@
   "schemaVersion": 2,
   "id": "cloud",
   "title": "Cloud AI architecture",
-  "taxonomyIds": [],
+  "taxonomyIds": [
+    "azure-ai-foundry",
+    "azure-openai",
+    "ai-architecture",
+    "architecture",
+    "enterprise-ai",
+    "platform-engineering"
+  ],
   "subtopics": [
     {
       "id": "azure-ai-foundry",

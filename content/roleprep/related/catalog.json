@@ -1,0 +1,1902 @@
+{
+  "schema": "roleprep-related-catalog@1",
+  "fetchedAt": "2026-11-04",
+  "sources": {
+    "blog": {
+      "repo": "ajeetchouksey/ajch_aaryaai_blogs",
+      "sha": "af6ae26"
+    },
+    "skillup": {
+      "repo": "ajeetchouksey/ajch_skillup",
+      "sha": "5351bddf8214cbc8b92a9e6e2a38b2b0e69c9f5e"
+    },
+    "usecases": {
+      "repo": "ajeetchouksey/ajch_ai_usecases",
+      "sha": "718a1b6"
+    },
+    "hol-labs": {
+      "repo": "ajeetchouksey/ajch_hol_labs",
+      "sha": "7a691ea"
+    }
+  },
+  "taxonomy": [
+    "4-layer-agent-stack",
+    "70-533",
+    "70-535",
+    "agentic-execution-layer",
+    "agentic-loop",
+    "agents",
+    "ai-architecture",
+    "analysis",
+    "application",
+    "architecture",
+    "automation",
+    "azure",
+    "azure-ai-foundry",
+    "azure-openai",
+    "azure-sql",
+    "backup",
+    "boring-interface",
+    "branch-protection",
+    "cca-f",
+    "ci-cd",
+    "cicd",
+    "cli",
+    "code-completion",
+    "code-filter",
+    "code-review",
+    "codequality",
+    "compliance",
+    "comprehension",
+    "compute",
+    "configuration-management",
+    "container",
+    "content-exclusions",
+    "content-safety",
+    "context",
+    "context-budget-rule",
+    "coordinator",
+    "copilot-chat",
+    "copilot-cli",
+    "copilot-extensions",
+    "copilot-features",
+    "copilot-studio",
+    "degradation-ladder",
+    "developer-productivity",
+    "devops",
+    "docker",
+    "document-eval-structured-output",
+    "document-rag",
+    "domain-boundary",
+    "dsc",
+    "enterprise",
+    "enterprise-ai",
+    "error-handling",
+    "evaluation",
+    "evaluation-metrics",
+    "few-shot",
+    "fine-tuning",
+    "git",
+    "github-copilot",
+    "governance",
+    "hallucination",
+    "hitl-approval-gate",
+    "hooks",
+    "human-in-the-loop",
+    "iac",
+    "ide-integration",
+    "jetbrains",
+    "json-schema",
+    "knowledge-base",
+    "latency",
+    "least-privilege",
+    "llm",
+    "llmops",
+    "mcp",
+    "monitoring",
+    "multi-agent",
+    "newit",
+    "observability",
+    "parallel-subagents",
+    "pestertest",
+    "plans",
+    "platform-engineering",
+    "powershell",
+    "privacy",
+    "production",
+    "prompt-caching",
+    "prompt-engineering",
+    "prompt-flow",
+    "proxy-security",
+    "rag",
+    "reliability",
+    "research-synthesize-generate",
+    "responsible-ai",
+    "retry-pattern",
+    "scenario-based",
+    "security",
+    "slash-commands",
+    "solution-design",
+    "sonarqube",
+    "task-decomposition",
+    "testing",
+    "tool-design",
+    "tool-selection",
+    "tool_choice",
+    "trigger-extract-validate-route",
+    "validation",
+    "vnet",
+    "vscode",
+    "vsts"
+  ],
+  "items": [
+    {
+      "type": "blog",
+      "id": "3pdevops-1",
+      "title": "DevOps Principles - 1",
+      "url": "https://aaryaai.dev/blog/3pdevops-1",
+      "taxonomyIds": [
+        "devops",
+        "newit"
+      ]
+    },
+    {
+      "type": "blog",
+      "id": "3pdevops-2",
+      "title": "DevOps Principles - 2",
+      "url": "https://aaryaai.dev/blog/3pdevops-2",
+      "taxonomyIds": [
+        "devops",
+        "newit"
+      ]
+    },
+    {
+      "type": "blog",
+      "id": "3pdevops-3",
+      "title": "DevOps: Build & Release",
+      "url": "https://aaryaai.dev/blog/3pdevops-3",
+      "taxonomyIds": [
+        "vsts",
+        "cicd",
+        "devops",
+        "newit"
+      ]
+    },
+    {
+      "type": "blog",
+      "id": "3pdevops-4",
+      "title": "DevOps SonarQube Assessment - 1",
+      "url": "https://aaryaai.dev/blog/3pdevops-4",
+      "taxonomyIds": [
+        "devops",
+        "newit",
+        "codequality",
+        "sonarqube"
+      ]
+    },
+    {
+      "type": "blog",
+      "id": "3pdevops-5",
+      "title": "DevOps SonarQube Assessment - 2",
+      "url": "https://aaryaai.dev/blog/3pdevops-5",
+      "taxonomyIds": [
+        "devops",
+        "newit",
+        "codequality",
+        "sonarqube"
+      ]
+    },
+    {
+      "type": "blog",
+      "id": "adlc-engineering-discipline-for-ai-agents",
+      "title": "The ADLC: A Software Engineering Discipline for AI Agents",
+      "url": "https://aaryaai.dev/blog/adlc-engineering-discipline-for-ai-agents",
+      "taxonomyIds": [
+        "agents",
+        "llmops",
+        "production",
+        "observability"
+      ]
+    },
+    {
+      "type": "blog",
+      "id": "agents-are-a-new-execution-layer",
+      "title": "Agents Aren't a Feature — They're a New Execution Layer",
+      "url": "https://aaryaai.dev/blog/agents-are-a-new-execution-layer",
+      "taxonomyIds": [
+        "agents",
+        "architecture"
+      ]
+    },
+    {
+      "type": "blog",
+      "id": "ai-architecture-blueprint-multi-agent-privacy-first",
+      "title": "The AI Architecture Blueprint: Designing Production-Ready, Multi-Agent, Privacy-First Systems",
+      "url": "https://aaryaai.dev/blog/ai-architecture-blueprint-multi-agent-privacy-first",
+      "taxonomyIds": [
+        "ai-architecture",
+        "production",
+        "llm",
+        "agents",
+        "observability"
+      ]
+    },
+    {
+      "type": "blog",
+      "id": "armtemplates101",
+      "title": "IaC: ARM Templates Fundamentals",
+      "url": "https://aaryaai.dev/blog/armtemplates101",
+      "taxonomyIds": [
+        "iac",
+        "devops"
+      ]
+    },
+    {
+      "type": "blog",
+      "id": "autoshutdownarmvm",
+      "title": "Auto-shutdown RM VM",
+      "url": "https://aaryaai.dev/blog/autoshutdownarmvm",
+      "taxonomyIds": [
+        "azure",
+        "iac"
+      ]
+    },
+    {
+      "type": "blog",
+      "id": "azdovar",
+      "title": "Manage Azure DevOps Pipelines Variables",
+      "url": "https://aaryaai.dev/blog/azdovar",
+      "taxonomyIds": [
+        "devops",
+        "vsts"
+      ]
+    },
+    {
+      "type": "blog",
+      "id": "azureapiversions",
+      "title": "Azure API Versions",
+      "url": "https://aaryaai.dev/blog/azureapiversions",
+      "taxonomyIds": [
+        "powershell"
+      ]
+    },
+    {
+      "type": "blog",
+      "id": "azurearchivestoragega",
+      "title": "Azure Archive Storage",
+      "url": "https://aaryaai.dev/blog/azurearchivestoragega",
+      "taxonomyIds": [
+        "azure",
+        "backup"
+      ]
+    },
+    {
+      "type": "blog",
+      "id": "azurebastion",
+      "title": "Azure Bastion",
+      "url": "https://aaryaai.dev/blog/azurebastion",
+      "taxonomyIds": [
+        "azure"
+      ]
+    },
+    {
+      "type": "blog",
+      "id": "azuresqlusingcli",
+      "title": "Azure SQL provisionig using CLI",
+      "url": "https://aaryaai.dev/blog/azuresqlusingcli",
+      "taxonomyIds": [
+        "azure-sql",
+        "cli",
+        "70-533"
+      ]
+    },
+    {
+      "type": "blog",
+      "id": "azurevnetusingcli",
+      "title": "Azure VNET provisioning using CLI",
+      "url": "https://aaryaai.dev/blog/azurevnetusingcli",
+      "taxonomyIds": [
+        "vnet",
+        "cli",
+        "70-533"
+      ]
+    },
+    {
+      "type": "blog",
+      "id": "cibranch",
+      "title": "Enable CI against all Branches",
+      "url": "https://aaryaai.dev/blog/cibranch",
+      "taxonomyIds": [
+        "devops"
+      ]
+    },
+    {
+      "type": "blog",
+      "id": "container",
+      "title": "Container - It’s all about Application",
+      "url": "https://aaryaai.dev/blog/container",
+      "taxonomyIds": [
+        "container",
+        "docker",
+        "azure",
+        "newit"
+      ]
+    },
+    {
+      "type": "blog",
+      "id": "context-budget-rule",
+      "title": "You're Wasting 60% of Your Context Window",
+      "url": "https://aaryaai.dev/blog/context-budget-rule",
+      "taxonomyIds": [
+        "context-budget-rule",
+        "cca-f"
+      ]
+    },
+    {
+      "type": "blog",
+      "id": "designscomputeinfra-1",
+      "title": "Azure VM Design - 1",
+      "url": "https://aaryaai.dev/blog/designscomputeinfra-1",
+      "taxonomyIds": [
+        "compute",
+        "70-535",
+        "70-533"
+      ]
+    },
+    {
+      "type": "blog",
+      "id": "designscomputeinfra-2",
+      "title": "Azure VM Design - 2",
+      "url": "https://aaryaai.dev/blog/designscomputeinfra-2",
+      "taxonomyIds": [
+        "compute",
+        "70-535",
+        "70-533"
+      ]
+    },
+    {
+      "type": "blog",
+      "id": "designscomputeinfra-3",
+      "title": "Design VM Scale Sets - 1",
+      "url": "https://aaryaai.dev/blog/designscomputeinfra-3",
+      "taxonomyIds": [
+        "compute",
+        "70-535",
+        "70-533"
+      ]
+    },
+    {
+      "type": "blog",
+      "id": "devopsattitude",
+      "title": "DevOps Attitude",
+      "url": "https://aaryaai.dev/blog/devopsattitude",
+      "taxonomyIds": [
+        "devops"
+      ]
+    },
+    {
+      "type": "blog",
+      "id": "devopsproject",
+      "title": "DevOps Project in Azure (Public Preview)",
+      "url": "https://aaryaai.dev/blog/devopsproject",
+      "taxonomyIds": [
+        "azure",
+        "devops",
+        "vsts"
+      ]
+    },
+    {
+      "type": "blog",
+      "id": "docker-1",
+      "title": "Docker Overview",
+      "url": "https://aaryaai.dev/blog/docker-1",
+      "taxonomyIds": [
+        "container",
+        "docker"
+      ]
+    },
+    {
+      "type": "blog",
+      "id": "docker-2",
+      "title": "Docker Definitions and Taxonomy",
+      "url": "https://aaryaai.dev/blog/docker-2",
+      "taxonomyIds": [
+        "container",
+        "docker"
+      ]
+    },
+    {
+      "type": "blog",
+      "id": "docker-3",
+      "title": "My First Docker Container",
+      "url": "https://aaryaai.dev/blog/docker-3",
+      "taxonomyIds": [
+        "container",
+        "docker",
+        "azure"
+      ]
+    },
+    {
+      "type": "blog",
+      "id": "dockerforwindows",
+      "title": "Setting up Docker on Windows environment",
+      "url": "https://aaryaai.dev/blog/dockerforwindows",
+      "taxonomyIds": [
+        "docker",
+        "container"
+      ]
+    },
+    {
+      "type": "blog",
+      "id": "dscconfiguration101",
+      "title": "PowerShell DSC - Part 2",
+      "url": "https://aaryaai.dev/blog/dscconfiguration101",
+      "taxonomyIds": [
+        "dsc",
+        "configuration-management",
+        "devops"
+      ]
+    },
+    {
+      "type": "blog",
+      "id": "github-governance-best-practices",
+      "title": "GitHub Governance Isn't a Settings Page — It's a System",
+      "url": "https://aaryaai.dev/blog/github-governance-best-practices",
+      "taxonomyIds": [
+        "devops",
+        "platform-engineering"
+      ]
+    },
+    {
+      "type": "blog",
+      "id": "gitvstfvc",
+      "title": "Git v/s TFVC",
+      "url": "https://aaryaai.dev/blog/gitvstfvc",
+      "taxonomyIds": [
+        "git",
+        "devops"
+      ]
+    },
+    {
+      "type": "blog",
+      "id": "gitwithvsts",
+      "title": "Git with VSTS - Part 1",
+      "url": "https://aaryaai.dev/blog/gitwithvsts",
+      "taxonomyIds": [
+        "vsts",
+        "git",
+        "devops"
+      ]
+    },
+    {
+      "type": "blog",
+      "id": "gitwithvsts-1",
+      "title": "Git with VSTS - Part 2- Git Repo",
+      "url": "https://aaryaai.dev/blog/gitwithvsts-1",
+      "taxonomyIds": [
+        "vsts",
+        "git",
+        "devops"
+      ]
+    },
+    {
+      "type": "blog",
+      "id": "guardrails-are-not-constraints",
+      "title": "Guardrails Are Not Constraints — They Are the Operating Model",
+      "url": "https://aaryaai.dev/blog/guardrails-are-not-constraints",
+      "taxonomyIds": [
+        "responsible-ai",
+        "platform-engineering"
+      ]
+    },
+    {
+      "type": "blog",
+      "id": "iac-vnet",
+      "title": "IaC - 101 - VNET",
+      "url": "https://aaryaai.dev/blog/iac-vnet",
+      "taxonomyIds": [
+        "vnet",
+        "iac",
+        "devops"
+      ]
+    },
+    {
+      "type": "blog",
+      "id": "iac101-1",
+      "title": "IaC: Understanding ARM Templates",
+      "url": "https://aaryaai.dev/blog/iac101-1",
+      "taxonomyIds": [
+        "azure",
+        "iac",
+        "devops"
+      ]
+    },
+    {
+      "type": "blog",
+      "id": "iac101-2",
+      "title": "IaC: Deploy-AzureResourceGroup.ps1",
+      "url": "https://aaryaai.dev/blog/iac101-2",
+      "taxonomyIds": [
+        "azure",
+        "iac",
+        "devops"
+      ]
+    },
+    {
+      "type": "blog",
+      "id": "iac101-3",
+      "title": "IaC: ARM Template Deployment",
+      "url": "https://aaryaai.dev/blog/iac101-3",
+      "taxonomyIds": [
+        "azure",
+        "iac",
+        "devops"
+      ]
+    },
+    {
+      "type": "blog",
+      "id": "iaccicdgithub",
+      "title": "IaC Deployment using VSTS Release and GitRepo",
+      "url": "https://aaryaai.dev/blog/iaccicdgithub",
+      "taxonomyIds": [
+        "iac",
+        "devops",
+        "vsts",
+        "cicd"
+      ]
+    },
+    {
+      "type": "blog",
+      "id": "iacunittestpester",
+      "title": "IaC Unit Test using Pester Test",
+      "url": "https://aaryaai.dev/blog/iacunittestpester",
+      "taxonomyIds": [
+        "devops",
+        "iac",
+        "pestertest"
+      ]
+    },
+    {
+      "type": "blog",
+      "id": "llm-observability",
+      "title": "Observability for LLMs: Logs, Traces, and the Token Meter",
+      "url": "https://aaryaai.dev/blog/llm-observability",
+      "taxonomyIds": [
+        "observability",
+        "llmops",
+        "platform-engineering"
+      ]
+    },
+    {
+      "type": "blog",
+      "id": "managedeploymenthistory",
+      "title": "Resource Group Deployment History",
+      "url": "https://aaryaai.dev/blog/managedeploymenthistory",
+      "taxonomyIds": []
+    },
+    {
+      "type": "blog",
+      "id": "microsoft-foundry-two-boundary-model",
+      "title": "Microsoft Foundry Has Two Boundaries. Most Teams Only Use One.",
+      "url": "https://aaryaai.dev/blog/microsoft-foundry-two-boundary-model",
+      "taxonomyIds": [
+        "azure-ai-foundry",
+        "ai-architecture"
+      ]
+    },
+    {
+      "type": "blog",
+      "id": "newazurefreeaccount",
+      "title": "New Azure Free Account",
+      "url": "https://aaryaai.dev/blog/newazurefreeaccount",
+      "taxonomyIds": [
+        "azure"
+      ]
+    },
+    {
+      "type": "blog",
+      "id": "newit",
+      "title": "NewIT",
+      "url": "https://aaryaai.dev/blog/newit",
+      "taxonomyIds": [
+        "newit",
+        "azure",
+        "devops"
+      ]
+    },
+    {
+      "type": "blog",
+      "id": "order-bot-domain-boundary",
+      "title": "When Your Burger Bot Goes Rogue: A Production Wake-Up Call",
+      "url": "https://aaryaai.dev/blog/order-bot-domain-boundary",
+      "taxonomyIds": [
+        "ai-architecture",
+        "domain-boundary",
+        "platform-engineering"
+      ]
+    },
+    {
+      "type": "blog",
+      "id": "pestertestinvstsci",
+      "title": "Pester Tests in VSTS Build",
+      "url": "https://aaryaai.dev/blog/pestertestinvstsci",
+      "taxonomyIds": [
+        "devops",
+        "iac",
+        "pestertest"
+      ]
+    },
+    {
+      "type": "blog",
+      "id": "petyaransomware",
+      "title": "Guidance Concerning Petya Ransomware",
+      "url": "https://aaryaai.dev/blog/petyaransomware",
+      "taxonomyIds": []
+    },
+    {
+      "type": "blog",
+      "id": "powershellincloudshell",
+      "title": "PowerShell in CloudShell",
+      "url": "https://aaryaai.dev/blog/powershellincloudshell",
+      "taxonomyIds": [
+        "azure",
+        "powershell"
+      ]
+    },
+    {
+      "type": "blog",
+      "id": "psdsc",
+      "title": "PowerShell DSC - Part 1",
+      "url": "https://aaryaai.dev/blog/psdsc",
+      "taxonomyIds": [
+        "dsc",
+        "configuration-management",
+        "devops"
+      ]
+    },
+    {
+      "type": "blog",
+      "id": "psserviceregion",
+      "title": "PowerShell to find service availability across the regions",
+      "url": "https://aaryaai.dev/blog/psserviceregion",
+      "taxonomyIds": [
+        "powershell"
+      ]
+    },
+    {
+      "type": "blog",
+      "id": "rag-vs-agentic-rag",
+      "title": "RAG vs Agentic RAG: From Search & Answer to Reason & Act",
+      "url": "https://aaryaai.dev/blog/rag-vs-agentic-rag",
+      "taxonomyIds": [
+        "rag",
+        "agentic-execution-layer",
+        "enterprise-ai",
+        "architecture",
+        "llm",
+        "agents"
+      ]
+    },
+    {
+      "type": "blog",
+      "id": "secazdopipelines",
+      "title": "Secure Secrets in Azure DevOps Pipelines",
+      "url": "https://aaryaai.dev/blog/secazdopipelines",
+      "taxonomyIds": [
+        "azure"
+      ]
+    },
+    {
+      "type": "blog",
+      "id": "secnwaz",
+      "title": "Securing Azure Network - 101",
+      "url": "https://aaryaai.dev/blog/secnwaz",
+      "taxonomyIds": [
+        "architecture"
+      ]
+    },
+    {
+      "type": "blog",
+      "id": "sqasazurewebapps",
+      "title": "Deploy SonarQube as Azure Web App Container",
+      "url": "https://aaryaai.dev/blog/sqasazurewebapps",
+      "taxonomyIds": [
+        "sonarqube",
+        "azure-sql",
+        "iac"
+      ]
+    },
+    {
+      "type": "blog",
+      "id": "sqconfig",
+      "title": "Deploy and Configure SonarQube",
+      "url": "https://aaryaai.dev/blog/sqconfig",
+      "taxonomyIds": [
+        "sonarqube"
+      ]
+    },
+    {
+      "type": "blog",
+      "id": "terrafaform1",
+      "title": "Learn Terraform - 1",
+      "url": "https://aaryaai.dev/blog/terrafaform1",
+      "taxonomyIds": [
+        "iac"
+      ]
+    },
+    {
+      "type": "blog",
+      "id": "the-boring-interface",
+      "title": "If Your Function Is Named callAnthropic(), You Don't Have an Abstraction",
+      "url": "https://aaryaai.dev/blog/the-boring-interface",
+      "taxonomyIds": [
+        "boring-interface",
+        "ai-architecture",
+        "cca-f"
+      ]
+    },
+    {
+      "type": "blog",
+      "id": "the-degradation-ladder",
+      "title": "Your Retry Loop Is Not a Fallback Strategy",
+      "url": "https://aaryaai.dev/blog/the-degradation-ladder",
+      "taxonomyIds": [
+        "degradation-ladder",
+        "ai-architecture",
+        "cca-f"
+      ]
+    },
+    {
+      "type": "blog",
+      "id": "vmbackup",
+      "title": "Integration of Azure Backup into VM create experience",
+      "url": "https://aaryaai.dev/blog/vmbackup",
+      "taxonomyIds": [
+        "azure",
+        "backup"
+      ]
+    },
+    {
+      "type": "blog",
+      "id": "vscode-tips",
+      "title": "Manage Azure Virtual Machine in VS Code",
+      "url": "https://aaryaai.dev/blog/vscode-tips",
+      "taxonomyIds": [
+        "iac"
+      ]
+    },
+    {
+      "type": "blog",
+      "id": "vsts101",
+      "title": "VSTS 101",
+      "url": "https://aaryaai.dev/blog/vsts101",
+      "taxonomyIds": [
+        "vsts",
+        "git",
+        "devops"
+      ]
+    },
+    {
+      "type": "blog",
+      "id": "vstsbuildrel",
+      "title": "VSTS Build and Release Agents",
+      "url": "https://aaryaai.dev/blog/vstsbuildrel",
+      "taxonomyIds": [
+        "iac",
+        "devops",
+        "vsts",
+        "cicd"
+      ]
+    },
+    {
+      "type": "blog",
+      "id": "vstsextensionsoapui",
+      "title": "VSTS Extension - SOAP UI Test",
+      "url": "https://aaryaai.dev/blog/vstsextensionsoapui",
+      "taxonomyIds": [
+        "vsts"
+      ]
+    },
+    {
+      "type": "blog",
+      "id": "what-is-a-vector-database",
+      "title": "What is a Vector Database? The Memory Layer Behind Modern AI",
+      "url": "https://aaryaai.dev/blog/what-is-a-vector-database",
+      "taxonomyIds": [
+        "rag",
+        "llm",
+        "enterprise-ai"
+      ]
+    },
+    {
+      "type": "holLabs",
+      "id": "build-first-agent-foundry-agent-service",
+      "title": "Build Your First Agent with Azure AI Foundry Agent Service",
+      "url": "https://aaryaai.dev/hol-labs/build-first-agent-foundry-agent-service",
+      "taxonomyIds": [
+        "azure-ai-foundry",
+        "agent-service",
+        "threads-runs",
+        "file-search",
+        "code-interpreter"
+      ]
+    },
+    {
+      "type": "holLabs",
+      "id": "build-the-ai-council-governance-gate",
+      "title": "Build the AI Council Governance Gate: From Pilot to Production",
+      "url": "https://aaryaai.dev/hol-labs/build-the-ai-council-governance-gate",
+      "taxonomyIds": [
+        "ai-council",
+        "governance-gate",
+        "responsible-ai",
+        "value-feasibility",
+        "ab731",
+        "change-management"
+      ]
+    },
+    {
+      "type": "holLabs",
+      "id": "deploy-first-prompt-flow-azure-ai-foundry",
+      "title": "Deploy Your First Prompt Flow in Azure AI Foundry",
+      "url": "https://aaryaai.dev/hol-labs/deploy-first-prompt-flow-azure-ai-foundry",
+      "taxonomyIds": [
+        "azure-ai-foundry",
+        "prompt-flow",
+        "azure-openai"
+      ]
+    },
+    {
+      "type": "holLabs",
+      "id": "wire-content-safety-foundry-endpoint",
+      "title": "Wire Azure AI Content Safety into a Foundry-Hosted Endpoint",
+      "url": "https://aaryaai.dev/hol-labs/wire-content-safety-foundry-endpoint",
+      "taxonomyIds": [
+        "azure-ai-foundry",
+        "content-safety",
+        "responsible-ai",
+        "prompt-flow"
+      ]
+    },
+    {
+      "type": "skillup",
+      "id": "ab100:d1",
+      "title": "AB-100 · Plan AI-Powered Business Solutions",
+      "url": "https://aaryaai.dev/skillup/ab100/notes",
+      "taxonomyIds": [
+        "copilot-studio",
+        "responsible-ai",
+        "tool-design",
+        "governance",
+        "prompt-caching",
+        "compliance",
+        "4-layer-agent-stack",
+        "architecture",
+        "content-safety",
+        "human-in-the-loop",
+        "rag",
+        "enterprise",
+        "knowledge-base",
+        "enterprise-ai",
+        "fine-tuning",
+        "prompt-engineering",
+        "multi-agent"
+      ]
+    },
+    {
+      "type": "skillup",
+      "id": "ab100:d2",
+      "title": "AB-100 · Design AI-Powered Business Solutions",
+      "url": "https://aaryaai.dev/skillup/ab100/notes",
+      "taxonomyIds": [
+        "multi-agent",
+        "agentic-execution-layer",
+        "4-layer-agent-stack",
+        "context-budget-rule",
+        "copilot-studio",
+        "tool-design",
+        "rag",
+        "prompt-flow",
+        "human-in-the-loop",
+        "security",
+        "compliance",
+        "mcp",
+        "knowledge-base",
+        "governance",
+        "fine-tuning"
+      ]
+    },
+    {
+      "type": "skillup",
+      "id": "ab100:d3",
+      "title": "AB-100 · Deploy AI-Powered Business Solutions",
+      "url": "https://aaryaai.dev/skillup/ab100/notes",
+      "taxonomyIds": [
+        "hallucination",
+        "evaluation-metrics",
+        "monitoring",
+        "latency",
+        "prompt-caching",
+        "azure-openai",
+        "validation",
+        "evaluation",
+        "content-safety",
+        "rag",
+        "responsible-ai",
+        "security",
+        "compliance",
+        "fine-tuning",
+        "governance"
+      ]
+    },
+    {
+      "type": "skillup",
+      "id": "ab100:d4",
+      "title": "AB-100 · Responsible AI & Lifecycle Governance",
+      "url": "https://aaryaai.dev/skillup/ab100/notes",
+      "taxonomyIds": [
+        "responsible-ai",
+        "content-safety",
+        "security",
+        "compliance",
+        "fine-tuning",
+        "governance",
+        "monitoring",
+        "copilot-studio",
+        "vnet",
+        "evaluation-metrics",
+        "least-privilege",
+        "reliability",
+        "ci-cd"
+      ]
+    },
+    {
+      "type": "skillup",
+      "id": "ab731:d1",
+      "title": "AB-731 · Business Value of Generative AI",
+      "url": "https://aaryaai.dev/skillup/ab731/notes",
+      "taxonomyIds": [
+        "prompt-engineering",
+        "few-shot",
+        "hallucination",
+        "rag",
+        "human-in-the-loop",
+        "responsible-ai",
+        "reliability",
+        "security",
+        "privacy",
+        "agentic-execution-layer",
+        "automation",
+        "latency"
+      ]
+    },
+    {
+      "type": "skillup",
+      "id": "ab731:d2",
+      "title": "AB-731 · Microsoft AI Apps & Services",
+      "url": "https://aaryaai.dev/skillup/ab731/notes",
+      "taxonomyIds": [
+        "security",
+        "copilot-studio",
+        "rag",
+        "governance"
+      ]
+    },
+    {
+      "type": "skillup",
+      "id": "ab731:d3",
+      "title": "AB-731 · Implementation & Adoption Strategy",
+      "url": "https://aaryaai.dev/skillup/ab731/notes",
+      "taxonomyIds": [
+        "responsible-ai",
+        "governance",
+        "reliability",
+        "privacy",
+        "human-in-the-loop",
+        "compliance"
+      ]
+    },
+    {
+      "type": "skillup",
+      "id": "ai901:d1",
+      "title": "AI-901 · Identify AI concepts and capabilities",
+      "url": "https://aaryaai.dev/skillup/ai901/notes",
+      "taxonomyIds": []
+    },
+    {
+      "type": "skillup",
+      "id": "ai901:d2",
+      "title": "AI-901 · Implement AI solutions by using Microsoft Foundry",
+      "url": "https://aaryaai.dev/skillup/ai901/notes",
+      "taxonomyIds": []
+    },
+    {
+      "type": "skillup",
+      "id": "ccaf:d1",
+      "title": "CCA-F · Agentic Architecture & Orchestration",
+      "url": "https://aaryaai.dev/skillup/ccaf/notes",
+      "taxonomyIds": [
+        "hooks",
+        "human-in-the-loop",
+        "multi-agent",
+        "agentic-loop",
+        "error-handling",
+        "observability",
+        "architecture",
+        "degradation-ladder",
+        "few-shot",
+        "task-decomposition",
+        "coordinator",
+        "4-layer-agent-stack",
+        "latency",
+        "compliance",
+        "code-review",
+        "reliability",
+        "least-privilege",
+        "context-budget-rule",
+        "tool_choice",
+        "context",
+        "tool-selection",
+        "retry-pattern"
+      ]
+    },
+    {
+      "type": "skillup",
+      "id": "ccaf:d2",
+      "title": "CCA-F · Claude Code Configuration & Workflows",
+      "url": "https://aaryaai.dev/skillup/ccaf/notes",
+      "taxonomyIds": [
+        "automation",
+        "mcp",
+        "hooks",
+        "slash-commands",
+        "error-handling",
+        "security",
+        "least-privilege",
+        "ci-cd",
+        "prompt-engineering",
+        "json-schema",
+        "retry-pattern",
+        "context",
+        "context-budget-rule",
+        "validation",
+        "latency"
+      ]
+    },
+    {
+      "type": "skillup",
+      "id": "ccaf:d3",
+      "title": "CCA-F · Prompt Engineering & Structured Output",
+      "url": "https://aaryaai.dev/skillup/ccaf/notes",
+      "taxonomyIds": [
+        "prompt-engineering",
+        "retry-pattern",
+        "tool_choice",
+        "json-schema",
+        "prompt-caching",
+        "context-budget-rule",
+        "security",
+        "reliability",
+        "few-shot",
+        "validation",
+        "hallucination",
+        "latency",
+        "ci-cd"
+      ]
+    },
+    {
+      "type": "skillup",
+      "id": "ccaf:d4",
+      "title": "CCA-F · Tool Design & MCP Integration",
+      "url": "https://aaryaai.dev/skillup/ccaf/notes",
+      "taxonomyIds": [
+        "tool-design",
+        "tool_choice",
+        "architecture",
+        "json-schema",
+        "tool-selection",
+        "error-handling",
+        "degradation-ladder",
+        "least-privilege",
+        "latency",
+        "mcp",
+        "validation",
+        "retry-pattern",
+        "context-budget-rule",
+        "coordinator",
+        "reliability"
+      ]
+    },
+    {
+      "type": "skillup",
+      "id": "ccaf:d5",
+      "title": "CCA-F · Context Management & Reliability",
+      "url": "https://aaryaai.dev/skillup/ccaf/notes",
+      "taxonomyIds": [
+        "context-budget-rule",
+        "human-in-the-loop",
+        "prompt-caching",
+        "error-handling",
+        "reliability",
+        "latency",
+        "agentic-loop",
+        "monitoring",
+        "context"
+      ]
+    },
+    {
+      "type": "skillup",
+      "id": "ccao:d1",
+      "title": "CCAO-F · Prompting and Task Execution",
+      "url": "https://aaryaai.dev/skillup/ccao/notes",
+      "taxonomyIds": []
+    },
+    {
+      "type": "skillup",
+      "id": "ccao:d2",
+      "title": "CCAO-F · Output Evaluation and Validation",
+      "url": "https://aaryaai.dev/skillup/ccao/notes",
+      "taxonomyIds": []
+    },
+    {
+      "type": "skillup",
+      "id": "ccao:d3",
+      "title": "CCAO-F · Product and Model Selection",
+      "url": "https://aaryaai.dev/skillup/ccao/notes",
+      "taxonomyIds": []
+    },
+    {
+      "type": "skillup",
+      "id": "ccao:d4",
+      "title": "CCAO-F · Workflow Integration and Solution Design",
+      "url": "https://aaryaai.dev/skillup/ccao/notes",
+      "taxonomyIds": []
+    },
+    {
+      "type": "skillup",
+      "id": "ccao:d5",
+      "title": "CCAO-F · Configuration and Knowledge Management",
+      "url": "https://aaryaai.dev/skillup/ccao/notes",
+      "taxonomyIds": []
+    },
+    {
+      "type": "skillup",
+      "id": "ccao:d6",
+      "title": "CCAO-F · Governance, Risk, and Responsible Use",
+      "url": "https://aaryaai.dev/skillup/ccao/notes",
+      "taxonomyIds": []
+    },
+    {
+      "type": "skillup",
+      "id": "ccao:d7",
+      "title": "CCAO-F · Troubleshooting and Optimization",
+      "url": "https://aaryaai.dev/skillup/ccao/notes",
+      "taxonomyIds": []
+    },
+    {
+      "type": "skillup",
+      "id": "ccap:d1",
+      "title": "CCA-P · Solution Design & Architecture",
+      "url": "https://aaryaai.dev/skillup/ccap/notes",
+      "taxonomyIds": [
+        "solution-design",
+        "scenario-based",
+        "application",
+        "human-in-the-loop",
+        "comprehension",
+        "retry-pattern",
+        "multi-agent",
+        "analysis",
+        "evaluation",
+        "prompt-caching"
+      ]
+    },
+    {
+      "type": "skillup",
+      "id": "ccap:d2",
+      "title": "CCA-P · Claude Models, Prompting & Context Engineering",
+      "url": "https://aaryaai.dev/skillup/ccap/notes",
+      "taxonomyIds": [
+        "scenario-based",
+        "application",
+        "analysis",
+        "domain-boundary",
+        "few-shot",
+        "prompt-engineering",
+        "comprehension",
+        "context-budget-rule",
+        "evaluation",
+        "prompt-caching"
+      ]
+    },
+    {
+      "type": "skillup",
+      "id": "ccap:d3",
+      "title": "CCA-P · Integration",
+      "url": "https://aaryaai.dev/skillup/ccap/notes",
+      "taxonomyIds": [
+        "least-privilege",
+        "scenario-based",
+        "comprehension",
+        "mcp",
+        "application",
+        "evaluation",
+        "analysis",
+        "observability",
+        "context-budget-rule"
+      ]
+    },
+    {
+      "type": "skillup",
+      "id": "ccap:d4",
+      "title": "CCA-P · Evaluation, Testing & Optimization",
+      "url": "https://aaryaai.dev/skillup/ccap/notes",
+      "taxonomyIds": [
+        "evaluation-metrics",
+        "latency",
+        "observability",
+        "scenario-based",
+        "analysis",
+        "prompt-caching",
+        "application",
+        "comprehension",
+        "evaluation",
+        "hallucination",
+        "monitoring"
+      ]
+    },
+    {
+      "type": "skillup",
+      "id": "ccap:d5",
+      "title": "CCA-P · Governance, Safety & Risk Management",
+      "url": "https://aaryaai.dev/skillup/ccap/notes",
+      "taxonomyIds": [
+        "domain-boundary",
+        "human-in-the-loop",
+        "scenario-based",
+        "application",
+        "least-privilege",
+        "comprehension",
+        "hallucination",
+        "rag",
+        "monitoring",
+        "multi-agent",
+        "analysis",
+        "compliance",
+        "evaluation"
+      ]
+    },
+    {
+      "type": "skillup",
+      "id": "ccap:d6",
+      "title": "CCA-P · Stakeholder Communication & Lifecycle Management",
+      "url": "https://aaryaai.dev/skillup/ccap/notes",
+      "taxonomyIds": [
+        "scenario-based",
+        "comprehension",
+        "application",
+        "analysis",
+        "evaluation",
+        "monitoring"
+      ]
+    },
+    {
+      "type": "skillup",
+      "id": "ccap:d7",
+      "title": "CCA-P · Developer Productivity & Operational Enablement",
+      "url": "https://aaryaai.dev/skillup/ccap/notes",
+      "taxonomyIds": [
+        "scenario-based",
+        "application",
+        "analysis",
+        "slash-commands",
+        "automation",
+        "comprehension",
+        "ci-cd",
+        "context-budget-rule",
+        "observability",
+        "multi-agent",
+        "hooks",
+        "evaluation-metrics",
+        "evaluation"
+      ]
+    },
+    {
+      "type": "skillup",
+      "id": "ccdv:d1",
+      "title": "CCDV-F · Agents and Workflows",
+      "url": "https://aaryaai.dev/skillup/ccdv/notes",
+      "taxonomyIds": []
+    },
+    {
+      "type": "skillup",
+      "id": "ccdv:d2",
+      "title": "CCDV-F · Applications and Integration",
+      "url": "https://aaryaai.dev/skillup/ccdv/notes",
+      "taxonomyIds": []
+    },
+    {
+      "type": "skillup",
+      "id": "ccdv:d3",
+      "title": "CCDV-F · Claude Code",
+      "url": "https://aaryaai.dev/skillup/ccdv/notes",
+      "taxonomyIds": []
+    },
+    {
+      "type": "skillup",
+      "id": "ccdv:d4",
+      "title": "CCDV-F · Eval, Testing, and Debugging",
+      "url": "https://aaryaai.dev/skillup/ccdv/notes",
+      "taxonomyIds": []
+    },
+    {
+      "type": "skillup",
+      "id": "ccdv:d5",
+      "title": "CCDV-F · Model Selection and Optimization",
+      "url": "https://aaryaai.dev/skillup/ccdv/notes",
+      "taxonomyIds": []
+    },
+    {
+      "type": "skillup",
+      "id": "ccdv:d6",
+      "title": "CCDV-F · Prompt and Context Engineering",
+      "url": "https://aaryaai.dev/skillup/ccdv/notes",
+      "taxonomyIds": []
+    },
+    {
+      "type": "skillup",
+      "id": "ccdv:d7",
+      "title": "CCDV-F · Security and Safety",
+      "url": "https://aaryaai.dev/skillup/ccdv/notes",
+      "taxonomyIds": []
+    },
+    {
+      "type": "skillup",
+      "id": "ccdv:d8",
+      "title": "CCDV-F · Tools and MCPs",
+      "url": "https://aaryaai.dev/skillup/ccdv/notes",
+      "taxonomyIds": []
+    },
+    {
+      "type": "skillup",
+      "id": "gh300:d1",
+      "title": "GH-300 Practice · Prompt Engineering & Copilot Chat",
+      "url": "https://aaryaai.dev/skillup/gh300/notes",
+      "taxonomyIds": [
+        "copilot-chat",
+        "ide-integration",
+        "github-copilot",
+        "enterprise",
+        "vscode",
+        "copilot-cli",
+        "knowledge-base",
+        "code-filter",
+        "privacy",
+        "plans",
+        "responsible-ai",
+        "copilot-extensions",
+        "prompt-engineering",
+        "code-completion",
+        "content-exclusions",
+        "fine-tuning",
+        "slash-commands"
+      ]
+    },
+    {
+      "type": "skillup",
+      "id": "gh300:d2",
+      "title": "GH-300 Practice · AI Model, Data Pipeline & Core Concepts",
+      "url": "https://aaryaai.dev/skillup/gh300/notes",
+      "taxonomyIds": [
+        "copilot-chat",
+        "ide-integration",
+        "github-copilot",
+        "enterprise",
+        "plans",
+        "vscode",
+        "jetbrains",
+        "copilot-cli",
+        "fine-tuning",
+        "privacy",
+        "responsible-ai",
+        "copilot-extensions",
+        "code-completion",
+        "knowledge-base",
+        "code-filter",
+        "content-exclusions",
+        "proxy-security"
+      ]
+    },
+    {
+      "type": "skillup",
+      "id": "gh300:d3",
+      "title": "GH-300 Practice · Privacy, Security & Trust Center",
+      "url": "https://aaryaai.dev/skillup/gh300/notes",
+      "taxonomyIds": [
+        "proxy-security",
+        "ide-integration",
+        "copilot-cli",
+        "responsible-ai",
+        "github-copilot",
+        "content-exclusions",
+        "vscode",
+        "copilot-extensions",
+        "copilot-chat",
+        "plans",
+        "code-completion",
+        "enterprise",
+        "knowledge-base",
+        "jetbrains",
+        "privacy"
+      ]
+    },
+    {
+      "type": "skillup",
+      "id": "gh300:d4",
+      "title": "GH-300 Practice · IDE Integration & Developer Tools",
+      "url": "https://aaryaai.dev/skillup/gh300/notes",
+      "taxonomyIds": [
+        "ide-integration",
+        "github-copilot",
+        "copilot-chat",
+        "code-completion",
+        "enterprise",
+        "vscode",
+        "copilot-extensions",
+        "copilot-cli"
+      ]
+    },
+    {
+      "type": "skillup",
+      "id": "gh600:d1",
+      "title": "GH-600 · Prepare Agent Architecture and SDLC Processes",
+      "url": "https://aaryaai.dev/skillup/gh600/notes",
+      "taxonomyIds": [
+        "human-in-the-loop",
+        "scenario-based",
+        "application",
+        "analysis",
+        "branch-protection",
+        "evaluation",
+        "comprehension",
+        "architecture",
+        "observability"
+      ]
+    },
+    {
+      "type": "skillup",
+      "id": "gh600:d2",
+      "title": "GH-600 · Implement Tool Use and Environment Interaction",
+      "url": "https://aaryaai.dev/skillup/gh600/notes",
+      "taxonomyIds": [
+        "least-privilege",
+        "comprehension",
+        "scenario-based",
+        "application",
+        "analysis",
+        "evaluation",
+        "multi-agent",
+        "governance",
+        "human-in-the-loop",
+        "copilot-chat",
+        "error-handling"
+      ]
+    },
+    {
+      "type": "skillup",
+      "id": "gh600:d3",
+      "title": "GH-600 · Manage Memory, State, and Execution",
+      "url": "https://aaryaai.dev/skillup/gh600/notes",
+      "taxonomyIds": [
+        "mcp",
+        "context-budget-rule",
+        "human-in-the-loop"
+      ]
+    },
+    {
+      "type": "skillup",
+      "id": "gh600:d4",
+      "title": "GH-600 · Perform Evaluation, Error Analysis, and Tuning",
+      "url": "https://aaryaai.dev/skillup/gh600/notes",
+      "taxonomyIds": [
+        "code-review",
+        "tool-selection",
+        "error-handling",
+        "least-privilege"
+      ]
+    },
+    {
+      "type": "skillup",
+      "id": "gh600:d5",
+      "title": "GH-600 · Orchestrate Multi-Agent Coordination",
+      "url": "https://aaryaai.dev/skillup/gh600/notes",
+      "taxonomyIds": [
+        "task-decomposition",
+        "observability",
+        "multi-agent",
+        "monitoring",
+        "human-in-the-loop"
+      ]
+    },
+    {
+      "type": "skillup",
+      "id": "gh600:d6",
+      "title": "GH-600 · Implement Guardrails and Accountability",
+      "url": "https://aaryaai.dev/skillup/gh600/notes",
+      "taxonomyIds": [
+        "responsible-ai",
+        "domain-boundary",
+        "compliance",
+        "human-in-the-loop",
+        "least-privilege"
+      ]
+    },
+    {
+      "type": "skillup",
+      "id": "ghbp:d1",
+      "title": "GH-BP · Branch Management & Protection",
+      "url": "https://aaryaai.dev/skillup/ghbp/notes",
+      "taxonomyIds": [
+        "branch-protection",
+        "code-review",
+        "security",
+        "automation",
+        "compliance"
+      ]
+    },
+    {
+      "type": "skillup",
+      "id": "ghbp:d2",
+      "title": "GH-BP · GitHub Actions & CI/CD",
+      "url": "https://aaryaai.dev/skillup/ghbp/notes",
+      "taxonomyIds": [
+        "security",
+        "automation",
+        "branch-protection",
+        "configuration-management",
+        "least-privilege",
+        "reliability"
+      ]
+    },
+    {
+      "type": "skillup",
+      "id": "ghbp:d3",
+      "title": "GH-BP · Repository Security & Governance",
+      "url": "https://aaryaai.dev/skillup/ghbp/notes",
+      "taxonomyIds": [
+        "compliance",
+        "branch-protection",
+        "code-review",
+        "governance",
+        "enterprise",
+        "automation",
+        "least-privilege"
+      ]
+    },
+    {
+      "type": "skillup",
+      "id": "ghc:d1",
+      "title": "GH-300 · Use GitHub Copilot Responsibly",
+      "url": "https://aaryaai.dev/skillup/ghc/notes",
+      "taxonomyIds": [
+        "responsible-ai",
+        "security",
+        "hallucination",
+        "context",
+        "ide-integration",
+        "code-review",
+        "compliance",
+        "testing"
+      ]
+    },
+    {
+      "type": "skillup",
+      "id": "ghc:d2",
+      "title": "GH-300 · Use GitHub Copilot Features",
+      "url": "https://aaryaai.dev/skillup/ghc/notes",
+      "taxonomyIds": [
+        "copilot-features",
+        "enterprise",
+        "vscode",
+        "copilot-chat",
+        "context",
+        "testing",
+        "copilot-cli",
+        "ide-integration",
+        "content-exclusions",
+        "code-review",
+        "slash-commands"
+      ]
+    },
+    {
+      "type": "skillup",
+      "id": "ghc:d3",
+      "title": "GH-300 · Understand GitHub Copilot Data and Architecture",
+      "url": "https://aaryaai.dev/skillup/ghc/notes",
+      "taxonomyIds": [
+        "copilot-chat",
+        "ide-integration",
+        "github-copilot",
+        "enterprise",
+        "plans",
+        "vscode",
+        "jetbrains",
+        "copilot-cli",
+        "fine-tuning",
+        "privacy",
+        "responsible-ai",
+        "copilot-extensions",
+        "code-completion",
+        "knowledge-base",
+        "code-filter",
+        "content-exclusions",
+        "proxy-security"
+      ]
+    },
+    {
+      "type": "skillup",
+      "id": "ghc:d4",
+      "title": "GH-300 · Apply Prompt Engineering and Context Crafting",
+      "url": "https://aaryaai.dev/skillup/ghc/notes",
+      "taxonomyIds": [
+        "copilot-chat",
+        "ide-integration",
+        "github-copilot",
+        "enterprise",
+        "vscode",
+        "copilot-cli",
+        "knowledge-base",
+        "code-filter",
+        "privacy",
+        "plans",
+        "responsible-ai",
+        "copilot-extensions",
+        "prompt-engineering",
+        "code-completion",
+        "content-exclusions",
+        "fine-tuning",
+        "slash-commands"
+      ]
+    },
+    {
+      "type": "skillup",
+      "id": "ghc:d5",
+      "title": "GH-300 · Improve Developer Productivity with GitHub Copilot",
+      "url": "https://aaryaai.dev/skillup/ghc/notes",
+      "taxonomyIds": [
+        "developer-productivity",
+        "copilot-chat",
+        "context",
+        "testing",
+        "ide-integration",
+        "security",
+        "compliance",
+        "code-review",
+        "copilot-cli"
+      ]
+    },
+    {
+      "type": "skillup",
+      "id": "ghc:d6",
+      "title": "GH-300 · Configure Privacy, Content Exclusions, and Safeguards",
+      "url": "https://aaryaai.dev/skillup/ghc/notes",
+      "taxonomyIds": [
+        "proxy-security",
+        "ide-integration",
+        "copilot-cli",
+        "responsible-ai",
+        "github-copilot",
+        "content-exclusions",
+        "vscode",
+        "copilot-extensions",
+        "copilot-chat",
+        "plans",
+        "code-completion",
+        "enterprise",
+        "knowledge-base",
+        "jetbrains",
+        "privacy"
+      ]
+    },
+    {
+      "type": "useCases",
+      "id": "aml-parallel-hitl",
+      "title": "Anti-Money Laundering Agent",
+      "url": "https://aaryaai.dev/usecases/aml-parallel-hitl",
+      "taxonomyIds": [
+        "parallel-subagents",
+        "hitl-approval-gate",
+        "trigger-extract-validate-route"
+      ]
+    },
+    {
+      "type": "useCases",
+      "id": "city-council-summary",
+      "title": "City Council Meeting Summary Agent",
+      "url": "https://aaryaai.dev/usecases/city-council-summary",
+      "taxonomyIds": [
+        "document-rag",
+        "research-synthesize-generate"
+      ]
+    },
+    {
+      "type": "useCases",
+      "id": "contract-redline-playbook-agent",
+      "title": "Contract Redline & Playbook Compliance Agent",
+      "url": "https://aaryaai.dev/usecases/contract-redline-playbook-agent",
+      "taxonomyIds": [
+        "trigger-extract-validate-route",
+        "document-rag",
+        "document-eval-structured-output",
+        "hitl-approval-gate",
+        "azure-ai-foundry"
+      ]
+    },
+    {
+      "type": "useCases",
+      "id": "employee-onboarding-agent",
+      "title": "Employee Onboarding Agent",
+      "url": "https://aaryaai.dev/usecases/employee-onboarding-agent",
+      "taxonomyIds": [
+        "parallel-subagents",
+        "hitl-approval-gate",
+        "trigger-extract-validate-route"
+      ]
+    },
+    {
+      "type": "useCases",
+      "id": "inbound-lead-magnet",
+      "title": "Inbound Lead Magnet Agent",
+      "url": "https://aaryaai.dev/usecases/inbound-lead-magnet",
+      "taxonomyIds": [
+        "trigger-extract-validate-route",
+        "research-synthesize-generate"
+      ]
+    },
+    {
+      "type": "useCases",
+      "id": "incident-postmortem-synthesis",
+      "title": "Incident Postmortem Synthesis Agent",
+      "url": "https://aaryaai.dev/usecases/incident-postmortem-synthesis",
+      "taxonomyIds": [
+        "parallel-subagents",
+        "research-synthesize-generate",
+        "document-eval-structured-output",
+        "hitl-approval-gate",
+        "azure-ai-foundry"
+      ]
+    },
+    {
+      "type": "useCases",
+      "id": "insurance-claims-triage",
+      "title": "FNOL Claims Intake Triage & Adjudication Support Agent",
+      "url": "https://aaryaai.dev/usecases/insurance-claims-triage",
+      "taxonomyIds": [
+        "trigger-extract-validate-route",
+        "document-eval-structured-output",
+        "document-rag",
+        "hitl-approval-gate",
+        "azure-ai-foundry"
+      ]
+    },
+    {
+      "type": "useCases",
+      "id": "internal-audit-testing",
+      "title": "Internal Audit Testing Agent (Banking)",
+      "url": "https://aaryaai.dev/usecases/internal-audit-testing",
+      "taxonomyIds": [
+        "document-eval-structured-output",
+        "hitl-approval-gate"
+      ]
+    },
+    {
+      "type": "useCases",
+      "id": "investment-proposal-drafting",
+      "title": "Investment Proposal Drafting Agent",
+      "url": "https://aaryaai.dev/usecases/investment-proposal-drafting",
+      "taxonomyIds": [
+        "research-synthesize-generate",
+        "document-rag"
+      ]
+    },
+    {
+      "type": "useCases",
+      "id": "investor-helpdesk",
+      "title": "Investor Helpdesk Agent",
+      "url": "https://aaryaai.dev/usecases/investor-helpdesk",
+      "taxonomyIds": [
+        "parallel-subagents",
+        "document-rag"
+      ]
+    },
+    {
+      "type": "useCases",
+      "id": "invoice-ops-hitl",
+      "title": "Invoice Operations Agent with HITL",
+      "url": "https://aaryaai.dev/usecases/invoice-ops-hitl",
+      "taxonomyIds": [
+        "trigger-extract-validate-route",
+        "hitl-approval-gate"
+      ]
+    },
+    {
+      "type": "useCases",
+      "id": "loan-application-underwriting",
+      "title": "Loan Application Underwriting Agent",
+      "url": "https://aaryaai.dev/usecases/loan-application-underwriting",
+      "taxonomyIds": [
+        "document-rag",
+        "hitl-approval-gate",
+        "trigger-extract-validate-route",
+        "azure-ai-foundry"
+      ]
+    },
+    {
+      "type": "useCases",
+      "id": "meeting-prep-agent",
+      "title": "Meeting Prep Agent (GTM)",
+      "url": "https://aaryaai.dev/usecases/meeting-prep-agent",
+      "taxonomyIds": [
+        "parallel-subagents",
+        "research-synthesize-generate"
+      ]
+    },
+    {
+      "type": "useCases",
+      "id": "policy-memo-writer",
+      "title": "Policy Memo Writer Agent",
+      "url": "https://aaryaai.dev/usecases/policy-memo-writer",
+      "taxonomyIds": [
+        "research-synthesize-generate",
+        "document-rag"
+      ]
+    },
+    {
+      "type": "useCases",
+      "id": "policy-qa-rag",
+      "title": "Insurance Policy Q&A Agent",
+      "url": "https://aaryaai.dev/usecases/policy-qa-rag",
+      "taxonomyIds": [
+        "document-rag"
+      ]
+    },
+    {
+      "type": "useCases",
+      "id": "safety-ops-chatbot",
+      "title": "Safety Ops Chatbot (Construction)",
+      "url": "https://aaryaai.dev/usecases/safety-ops-chatbot",
+      "taxonomyIds": [
+        "document-rag"
+      ]
+    },
+    {
+      "type": "useCases",
+      "id": "scholarship-matching",
+      "title": "Scholarship Matching Agent",
+      "url": "https://aaryaai.dev/usecases/scholarship-matching",
+      "taxonomyIds": [
+        "document-rag",
+        "research-synthesize-generate"
+      ]
+    },
+    {
+      "type": "useCases",
+      "id": "soc2-compliance-eval",
+      "title": "SOC 2 Report Evaluation Agent",
+      "url": "https://aaryaai.dev/usecases/soc2-compliance-eval",
+      "taxonomyIds": [
+        "document-eval-structured-output"
+      ]
+    },
+    {
+      "type": "useCases",
+      "id": "vendor-onboarding",
+      "title": "Vendor Onboarding Agent",
+      "url": "https://aaryaai.dev/usecases/vendor-onboarding",
+      "taxonomyIds": [
+        "trigger-extract-validate-route",
+        "hitl-approval-gate"
+      ]
+    }
+  ]
+}

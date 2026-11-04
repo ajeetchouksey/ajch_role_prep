@@ -3,7 +3,13 @@
   "schemaVersion": 2,
   "id": "prompt",
   "title": "Prompt & context design",
-  "taxonomyIds": [],
+  "taxonomyIds": [
+    "prompt-engineering",
+    "context-budget-rule",
+    "few-shot",
+    "context",
+    "json-schema"
+  ],
   "subtopics": [
     {
       "id": "system-prompts-structure",

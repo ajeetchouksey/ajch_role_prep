@@ -23,7 +23,7 @@
       "source": "kit/agents/roleprep-lead.md"
     },
     ".claude/agents/roleprep-publisher.md": {
-      "sha": "f2fa5773e1ca6685",
+      "sha": "52de5eef4d7fe49a",
       "source": "kit/agents/roleprep-publisher.md"
     },
     ".claude/agents/roleprep-qa.md": {
@@ -35,11 +35,11 @@
       "source": "kit/agents/roleprep-ux-designer.md"
     },
     ".claude/agents/roleprep-writer.md": {
-      "sha": "c2ce3eb94dba0ae0",
+      "sha": "f6077098b0e40dab",
       "source": "kit/agents/roleprep-writer.md"
     },
     ".claude/agents/rubric-reviewer.md": {
-      "sha": "eaca3099b1e35d73",
+      "sha": "6419b540d22355ca",
       "source": "kit/agents/rubric-reviewer.md"
     },
     ".claude/agents/scoring-calibrator.md": {
@@ -87,7 +87,7 @@
       "source": "ajch_agent_framework/hooks/guard-protected.mjs"
     },
     ".claude/hooks/kit-config.json": {
-      "sha": "18eda2e2d5f48dec",
+      "sha": "3ba116704a472cb2",
       "source": "kit.json"
     },
     ".claude/hooks/validate-on-write.mjs": {
@@ -115,7 +115,7 @@
       "source": "kit/skills/moment-craft/SKILL.md"
     },
     ".claude/skills/roleprep-content-standard/SKILL.md": {
-      "sha": "f08d37499c80d4d5",
+      "sha": "415a4c872842cd77",
       "source": "kit/skills/roleprep-content-standard/SKILL.md"
     },
     ".claude/skills/roleprep-engineering/SKILL.md": {

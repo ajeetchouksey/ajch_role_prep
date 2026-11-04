@@ -1,0 +1,111 @@
+{
+  "schema": "roleprep-related@1",
+  "snapshot": "2026-11-04",
+  "sources": {
+    "blog": {
+      "repo": "ajeetchouksey/ajch_aaryaai_blogs",
+      "sha": "af6ae26"
+    },
+    "skillup": {
+      "repo": "ajeetchouksey/ajch_skillup",
+      "sha": "5351bddf8214cbc8b92a9e6e2a38b2b0e69c9f5e"
+    },
+    "usecases": {
+      "repo": "ajeetchouksey/ajch_ai_usecases",
+      "sha": "718a1b6"
+    },
+    "hol-labs": {
+      "repo": "ajeetchouksey/ajch_hol_labs",
+      "sha": "7a691ea"
+    }
+  },
+  "subtopics": {
+    "rag/hybrid-search-reranking": {
+      "skillup": [
+        {
+          "id": "ab100:d2",
+          "title": "AB-100 · Design AI-Powered Business Solutions",
+          "url": "https://aaryaai.dev/skillup/ab100/notes",
+          "why": "picked",
+          "shared": [
+            "rag",
+            "knowledge-base"
+          ]
+        },
+        {
+          "id": "ab100:d3",
+          "title": "AB-100 · Deploy AI-Powered Business Solutions",
+          "url": "https://aaryaai.dev/skillup/ab100/notes",
+          "why": "matched",
+          "shared": [
+            "hallucination",
+            "evaluation-metrics",
+            "latency",
+            "rag"
+          ]
+        },
+        {
+          "id": "ccap:d4",
+          "title": "CCA-P · Evaluation, Testing & Optimization",
+          "url": "https://aaryaai.dev/skillup/ccap/notes",
+          "why": "matched",
+          "shared": [
+            "evaluation-metrics",
+            "latency",
+            "hallucination"
+          ]
+        }
+      ],
+      "useCases": [
+        {
+          "id": "policy-qa-rag",
+          "title": "Insurance Policy Q&A Agent",
+          "url": "https://aaryaai.dev/usecases/policy-qa-rag",
+          "why": "picked",
+          "shared": [
+            "document-rag"
+          ]
+        },
+        {
+          "id": "city-council-summary",
+          "title": "City Council Meeting Summary Agent",
+          "url": "https://aaryaai.dev/usecases/city-council-summary",
+          "why": "matched",
+          "shared": [
+            "document-rag"
+          ]
+        },
+        {
+          "id": "contract-redline-playbook-agent",
+          "title": "Contract Redline & Playbook Compliance Agent",
+          "url": "https://aaryaai.dev/usecases/contract-redline-playbook-agent",
+          "why": "matched",
+          "shared": [
+            "document-rag"
+          ]
+        }
+      ],
+      "blog": [
+        {
+          "id": "rag-vs-agentic-rag",
+          "title": "RAG vs Agentic RAG: From Search & Answer to Reason & Act",
+          "url": "https://aaryaai.dev/blog/rag-vs-agentic-rag",
+          "why": "matched",
+          "shared": [
+            "rag"
+          ]
+        },
+        {
+          "id": "what-is-a-vector-database",
+          "title": "What is a Vector Database? The Memory Layer Behind Modern AI",
+          "url": "https://aaryaai.dev/blog/what-is-a-vector-database",
+          "why": "matched",
+          "shared": [
+            "rag"
+          ]
+        }
+      ],
+      "holLabs": []
+    }
+  }
+}

@@ -3,7 +3,15 @@
   "schemaVersion": 2,
   "id": "llmops",
   "title": "LLMOps & deployment",
-  "taxonomyIds": [],
+  "taxonomyIds": [
+    "llmops",
+    "observability",
+    "monitoring",
+    "production",
+    "reliability",
+    "degradation-ladder",
+    "retry-pattern"
+  ],
   "subtopics": [
     {
       "id": "observability-tracing",

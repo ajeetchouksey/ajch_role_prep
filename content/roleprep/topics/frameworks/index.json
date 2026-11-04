@@ -3,7 +3,14 @@
   "schemaVersion": 2,
   "id": "frameworks",
   "title": "Agent frameworks & MCP",
-  "taxonomyIds": [],
+  "taxonomyIds": [
+    "mcp",
+    "tool-design",
+    "tool-selection",
+    "copilot-studio",
+    "prompt-flow",
+    "azure-ai-foundry"
+  ],
   "subtopics": [
     {
       "id": "mcp-servers-tools",

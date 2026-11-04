@@ -56,6 +56,25 @@ export interface Subtopic {
   moments: Moment[];
 }
 
+/** Related items elsewhere on aaryaai.dev, ranked by shared taxonomy concepts. */
+export interface RelatedItem { id: string; title: string; url: string; why: 'picked' | 'matched'; shared: string[] }
+export type Related = Record<'skillup' | 'useCases' | 'blog' | 'holLabs', RelatedItem[]>;
+
+export const RELATED_GROUPS: { key: keyof Related; label: string; verb: string }[] = [
+  { key: 'skillup', label: 'SkillUp notes', verb: 'Learn it' },
+  { key: 'holLabs', label: 'Hands-on labs', verb: 'Build it' },
+  { key: 'useCases', label: 'Real use cases', verb: 'See it in production' },
+  { key: 'blog', label: 'Blog', verb: 'Read more' },
+];
+
+/** Runtime fetch of a sub-topic's related links (app routes; cached by the service worker). */
+export async function fetchRelated(topicId: string, subtopicId: string): Promise<Related | null> {
+  const res = await fetch('/content/roleprep/related/links.json');
+  if (!res.ok) return null;
+  const all: { subtopics: Record<string, Related> } = await res.json();
+  return all.subtopics[`${topicId}/${subtopicId}`] ?? null;
+}
+
 export const LEVELS: { id: LevelId; label: string }[] = [
   { id: 'tech', label: 'Tech' },
   { id: 'lead', label: 'Tech Lead' },

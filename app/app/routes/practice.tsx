@@ -1,14 +1,16 @@
 import { useEffect, useMemo, useState } from 'react';
 import { Link } from 'react-router';
 import type { Route } from './+types/practice';
-import { fetchSubtopic, KIND_LABEL, LEVELS, type LevelId, type Moment, type View } from '~/lib/content';
+import { fetchRelated, fetchSubtopic, KIND_LABEL, LEVELS, type LevelId, type Moment, type View } from '~/lib/content';
+import { RelatedLinks } from '~/lib/related-links';
 import { loadLevel, saveLevel, saveRep } from '~/lib/progress';
 
 // Practice room (screen S5): answer first against a timer, then reveal, then
 // self-score against the rubric. Speak-your-answer and AI feedback plug in here
 // (stories RP-3.x and RP-4.x) through /api/transcribe and /api/feedback.
 export async function clientLoader({ params }: Route.ClientLoaderArgs) {
-  return { subtopic: await fetchSubtopic(params.topic, params.subtopic), topicId: params.topic };
+  const [subtopic, related] = await Promise.all([fetchSubtopic(params.topic, params.subtopic), fetchRelated(params.topic, params.subtopic)]);
+  return { subtopic, related, topicId: params.topic };
 }
 
 export function meta({ data }: Route.MetaArgs) {
@@ -18,7 +20,7 @@ export function meta({ data }: Route.MetaArgs) {
 type Phase = 'answer' | 'reveal' | 'done';
 
 export default function Practice({ loaderData }: Route.ComponentProps) {
-  const { subtopic, topicId } = loaderData;
+  const { subtopic, related, topicId } = loaderData;
   const [level, setLevel] = useState<LevelId>('tech');
   const [index, setIndex] = useState(0);
   const [phase, setPhase] = useState<Phase>('answer');
@@ -140,6 +142,13 @@ export default function Practice({ loaderData }: Route.ComponentProps) {
                 </label>
               ))}
             </fieldset>
+          )}
+          {related && rubric.length > 0 && checked.some((c) => !c) && (
+            <div className="space-y-3 rounded-2xl border border-live/50 bg-live/5 p-5">
+              <p className="font-semibold">Close the gap</p>
+              <p className="text-sm text-mist">Missed a point? These cover it, then come back and retry this moment.</p>
+              <RelatedLinks related={related} compact />
+            </div>
           )}
           {(view.followUps?.length || view.followUp) && (
             <p className="text-sm text-mist"><span className="font-semibold text-white">They'll follow up with: </span>{view.followUps?.join(' · ') ?? view.followUp}</p>

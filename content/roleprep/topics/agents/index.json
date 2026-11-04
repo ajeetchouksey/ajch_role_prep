@@ -3,7 +3,15 @@
   "schemaVersion": 2,
   "id": "agents",
   "title": "Agents & orchestration",
-  "taxonomyIds": [],
+  "taxonomyIds": [
+    "agents",
+    "4-layer-agent-stack",
+    "multi-agent",
+    "agentic-loop",
+    "parallel-subagents",
+    "task-decomposition",
+    "hitl-approval-gate"
+  ],
   "subtopics": [
     {
       "id": "agent-loops-tool-use",

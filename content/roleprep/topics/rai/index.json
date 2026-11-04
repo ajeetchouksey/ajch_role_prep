@@ -3,7 +3,15 @@
   "schemaVersion": 2,
   "id": "rai",
   "title": "Responsible AI & governance",
-  "taxonomyIds": [],
+  "taxonomyIds": [
+    "responsible-ai",
+    "governance",
+    "compliance",
+    "content-safety",
+    "privacy",
+    "domain-boundary",
+    "human-in-the-loop"
+  ],
   "subtopics": [
     {
       "id": "safety-content-filters",

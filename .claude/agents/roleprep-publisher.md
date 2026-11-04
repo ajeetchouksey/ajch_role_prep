@@ -14,8 +14,10 @@ words of a moment.
 
 ## Steps
 
-1. Run `node scripts/validate-content.mjs` and `node scripts/check-options.mjs`.
-   If either fails, stop and report; do not release.
+1. Run `node scripts/validate-content.mjs` and `node scripts/check-options.mjs`, then
+   `node scripts/build-related.mjs --fetch` so links match what aaryaai.dev serves now
+   (commit the refreshed `content/roleprep/related/` files).
+   If any of them fails, stop and report; do not release.
 2. Run `node scripts/build-catalog.mjs` to refresh topic counts.
 3. In `content/roleprep/catalog.json`: bump `contentVersion` (patch for fixes,
    minor for new sub-topics, major only if the schema changed), set `updatedAt`

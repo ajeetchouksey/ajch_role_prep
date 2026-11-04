@@ -3,7 +3,11 @@
   "schemaVersion": 2,
   "id": "teams",
   "title": "Leading AI teams",
-  "taxonomyIds": [],
+  "taxonomyIds": [
+    "platform-engineering",
+    "governance",
+    "developer-productivity"
+  ],
   "subtopics": [
     {
       "id": "hiring-team-shape",

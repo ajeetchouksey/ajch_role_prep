@@ -36,7 +36,8 @@ content/roleprep/
 | `id`, `topicId`, `title` | as above |
 | `contentVersion` | `x.y.z`; patch for fixes, minor for new moments |
 | `updatedAt` | `YYYY-MM-DD` |
-| `links` | `{ skillup: ["ab100:d2"], holLabs: [...], useCases: [...] }`, used for "close the gap" |
+| `taxonomyIds` | 2 to 8 concept IDs from the platform taxonomy (`content/roleprep/related/catalog.json` → `taxonomy`), most specific first. They drive the automatic links to the rest of AaryaAI |
+| `links` | Hand-picked links that always show first: `{ skillup: ["ab100:d2"], useCases: ["policy-qa-rag"], blog: ["slug"], holLabs: ["lab-id"] }`. IDs must exist on aaryaai.dev; pick one only when it is clearly the best place to close a gap |
 | `moments` | 3 to 8, in practice order; at least one question, one pushback and one challenge |
 
 ## Moment kinds and required fields (every level)
@@ -50,6 +51,22 @@ content/roleprep/
 
 The level-defining text (`short`, `strong`, `line`, `model`) must differ at each
 level. The validator rejects identical text; the reviewer rejects reworded copies.
+
+## Links to the rest of AaryaAI
+
+Every live sub-topic shows "Go deeper on AaryaAI" (public page) and "Close the gap"
+(practice room, after a missed rubric point): up to 3 SkillUp notes, labs, use cases
+and blog posts. `scripts/build-related.mjs` ranks items by the taxonomy concepts they
+share with the sub-topic (and, at half weight, its topic), rarer concepts counting
+more, hand-picked `links` first. It writes `content/roleprep/related/links.json`.
+
+- After changing `taxonomyIds` or `links`, run `node scripts/build-related.mjs` (the
+  write hook does this too) and read the result: every item should help someone who
+  missed a rubric point in this sub-topic. If one doesn't, tighten `taxonomyIds`
+  rather than adding more.
+- Unknown taxonomy IDs and links to items not on aaryaai.dev fail the check.
+- `node scripts/build-related.mjs --fetch` refreshes the snapshot of the other
+  verticals at the commits aaryaai.dev serves; the publisher runs it before each release.
 
 ## Writing rules (checked by the reviewer)
 

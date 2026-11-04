@@ -24,6 +24,7 @@ const SUB = '/topics/rag/hybrid-search-reranking';
 
 const raw = await fetch(BASE + SUB).then((r) => r.text());
 t('sub-topic page is real HTML without JavaScript', raw.includes('When would you add a reranker to a RAG pipeline?') && raw.includes('<title>Hybrid search &amp; reranking interview questions'), raw.slice(0, 200));
+t('sub-topic page links to SkillUp, use cases and blog on aaryaai.dev', raw.includes('Go deeper on AaryaAI') && raw.includes('https://aaryaai.dev/skillup/') && raw.includes('https://aaryaai.dev/usecases/') && raw.includes('https://aaryaai.dev/blog/'));
 const health = await fetch(BASE + '/api/health').then((r) => r.json()).catch(() => ({}));
 t('API answers on /api/health', health.ok === true, JSON.stringify(health));
 const missing = await fetch(BASE + '/api/nope');
@@ -46,6 +47,7 @@ await page.getByRole('button', { name: 'Show the strong answer' }).click();
 t('reveal shows the strong answer', await page.getByText('Strong answer').isVisible());
 const boxes = page.getByRole('checkbox');
 t('rubric points can be self-scored', (await boxes.count()) > 0);
+t('missed points offer "Close the gap" links', await page.getByText('Close the gap').isVisible() && (await page.locator('a[href^="https://aaryaai.dev/"]').count()) > 0);
 await boxes.first().check();
 await page.screenshot({ path: join(SHOTS, 'practice-reveal.png'), fullPage: true });
 await page.getByRole('button', { name: 'Next moment' }).click();

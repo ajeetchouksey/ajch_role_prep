@@ -3,7 +3,12 @@
   "schemaVersion": 2,
   "id": "cost",
   "title": "Cost & scale",
-  "taxonomyIds": [],
+  "taxonomyIds": [
+    "prompt-caching",
+    "latency",
+    "boring-interface",
+    "production"
+  ],
   "subtopics": [
     {
       "id": "caching-batching",

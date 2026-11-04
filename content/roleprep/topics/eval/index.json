@@ -3,7 +3,13 @@
   "schemaVersion": 2,
   "id": "eval",
   "title": "Evaluation & quality",
-  "taxonomyIds": [],
+  "taxonomyIds": [
+    "evaluation",
+    "evaluation-metrics",
+    "validation",
+    "hallucination",
+    "testing"
+  ],
   "subtopics": [
     {
       "id": "offline-eval-sets",

@@ -38,6 +38,10 @@ reference.
 5. Pushback options are similar in length; wrong ones are reasoned, not silly.
 6. Set `updatedAt` to today and bump `contentVersion` (patch for fixes, minor
    for a new sub-topic).
+7. Set `taxonomyIds` (2 to 8 concepts from the platform taxonomy, most specific
+   first) and hand-pick `links` only where one item is clearly the best way to
+   close a gap; see "Links to the rest of AaryaAI" in `roleprep-content-standard`.
+   Read the sub-topic's entry in `content/roleprep/related/links.json` afterwards.
 
 ## After writing
 

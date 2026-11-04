@@ -6,7 +6,8 @@
       "match": "/content/roleprep/.*\\.json$",
       "run": [
         "scripts/validate-content.mjs",
-        "scripts/check-options.mjs"
+        "scripts/check-options.mjs",
+        "scripts/build-related.mjs"
       ]
     },
     {
