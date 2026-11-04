@@ -1,6 +1,6 @@
 {
   "$schema": "../ajch_agent_framework/schemas/kit.schema.json",
-  "framework": "0.2.0",
+  "framework": "0.2.1",
   "vertical": {
     "key": "roleprep",
     "name": "Role Prep",

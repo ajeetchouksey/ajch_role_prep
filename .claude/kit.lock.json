@@ -1,97 +1,97 @@
 {
-  "framework": "0.2.0",
+  "framework": "0.2.1",
   "vertical": "roleprep",
   "files": {
     ".claude/agents/roleprep-backend-engineer.md": {
-      "sha": "a97f5920a64e16da",
+      "sha": "e9515a68815baed1",
       "source": "kit/agents/roleprep-backend-engineer.md"
     },
     ".claude/agents/roleprep-docs-writer.md": {
-      "sha": "0adf8ad6bb255e64",
+      "sha": "6a009d94b686e332",
       "source": "kit/agents/roleprep-docs-writer.md"
     },
     ".claude/agents/roleprep-frontend-engineer.md": {
-      "sha": "e71129aec69244ec",
+      "sha": "cb553e833f140cf8",
       "source": "kit/agents/roleprep-frontend-engineer.md"
     },
     ".claude/agents/roleprep-growth-analyst.md": {
-      "sha": "06acc04afb5d3dba",
+      "sha": "71e93c9bfc65fddc",
       "source": "kit/agents/roleprep-growth-analyst.md"
     },
     ".claude/agents/roleprep-lead.md": {
-      "sha": "364d636c2e1c97d9",
+      "sha": "70951f1d3456142a",
       "source": "kit/agents/roleprep-lead.md"
     },
     ".claude/agents/roleprep-publisher.md": {
-      "sha": "da0ec3ec27d19dea",
+      "sha": "f2fa5773e1ca6685",
       "source": "kit/agents/roleprep-publisher.md"
     },
     ".claude/agents/roleprep-qa.md": {
-      "sha": "e2a3d747e96027b7",
+      "sha": "84a0684918ff93eb",
       "source": "kit/agents/roleprep-qa.md"
     },
     ".claude/agents/roleprep-ux-designer.md": {
-      "sha": "8d7205100004bf85",
+      "sha": "4bbf5d01654cf0b5",
       "source": "kit/agents/roleprep-ux-designer.md"
     },
     ".claude/agents/roleprep-writer.md": {
-      "sha": "000b2dd0ffad76e9",
+      "sha": "c2ce3eb94dba0ae0",
       "source": "kit/agents/roleprep-writer.md"
     },
     ".claude/agents/rubric-reviewer.md": {
-      "sha": "ab24992ea6240019",
+      "sha": "eaca3099b1e35d73",
       "source": "kit/agents/rubric-reviewer.md"
     },
     ".claude/agents/scoring-calibrator.md": {
-      "sha": "b273875642ccb75e",
+      "sha": "2a1f624ba65bc0a0",
       "source": "kit/agents/scoring-calibrator.md"
     },
     ".claude/commands/build-story.md": {
-      "sha": "ff30397a165a2dee",
+      "sha": "ceb43a0ef37f20be",
       "source": "kit/commands/build-story.md"
     },
     ".claude/commands/doc.md": {
-      "sha": "de929214090dba76",
+      "sha": "8d090888c56ed32d",
       "source": "ajch_agent_framework/commands/doc.mjs"
     },
     ".claude/commands/new-subtopic.md": {
-      "sha": "a8079ed6c47222fa",
+      "sha": "3b2943a52be147a1",
       "source": "kit/commands/new-subtopic.md"
     },
     ".claude/commands/pilot-scoring.md": {
-      "sha": "c612ac5cbfa73748",
+      "sha": "06417a7fdc03a68e",
       "source": "kit/commands/pilot-scoring.md"
     },
     ".claude/commands/qa.md": {
-      "sha": "c36bd6e63dac7344",
+      "sha": "6b4d813a3fb9d118",
       "source": "kit/commands/qa.md"
     },
     ".claude/commands/refresh-topic.md": {
-      "sha": "ca0f9f1bd78e946b",
+      "sha": "ce51f7d608b4e72e",
       "source": "kit/commands/refresh-topic.md"
     },
     ".claude/commands/release.md": {
-      "sha": "4c6fbc5b193a3618",
+      "sha": "e2dd43f74e35aeaa",
       "source": "kit/commands/release.md"
     },
     ".claude/commands/review.md": {
-      "sha": "0c40196dbb81c86a",
+      "sha": "7623fe9c99fa4b00",
       "source": "kit/commands/review.md"
     },
     ".claude/commands/ux-review.md": {
-      "sha": "d03767ef57b820c1",
+      "sha": "3cfdb72376b3470e",
       "source": "kit/commands/ux-review.md"
     },
     ".claude/hooks/guard-protected.mjs": {
-      "sha": "66be45a54134facc",
+      "sha": "c351a6ab83dd82c5",
       "source": "ajch_agent_framework/hooks/guard-protected.mjs"
     },
     ".claude/hooks/kit-config.json": {
-      "sha": "2e88004c802a1d16",
+      "sha": "18eda2e2d5f48dec",
       "source": "kit.json"
     },
     ".claude/hooks/validate-on-write.mjs": {
-      "sha": "59128894dc4d0f6f",
+      "sha": "6f0390e94d7e1b76",
       "source": "ajch_agent_framework/hooks/validate-on-write.mjs"
     },
     ".claude/skills/aaryaai-brand/SKILL.md": {
@@ -99,7 +99,7 @@
       "source": "kit/skills/aaryaai-brand/SKILL.md"
     },
     ".claude/skills/docs-standard/SKILL.md": {
-      "sha": "1bc44a61f3543084",
+      "sha": "cfd2c09b6f0a14a7",
       "source": "ajch_agent_framework/skills/docs-standard.mjs"
     },
     ".claude/skills/level-voice/SKILL.md": {
@@ -107,7 +107,7 @@
       "source": "kit/skills/level-voice/SKILL.md"
     },
     ".claude/skills/model-policy/SKILL.md": {
-      "sha": "75e0b88587bc016d",
+      "sha": "8018460f90ea688f",
       "source": "ajch_agent_framework/skills/model-policy.mjs"
     },
     ".claude/skills/moment-craft/SKILL.md": {
@@ -143,19 +143,19 @@
       "source": "kit/skills/scoring-contract/references/feedback-prompt.md"
     },
     ".claude/skills/svg-diagram-craft/SKILL.md": {
-      "sha": "1a1555620d7edec7",
+      "sha": "cfde33b86974091e",
       "source": "ajch_agent_framework/skills/svg-diagram-craft.mjs"
     },
     "scripts/build-diagrams.mjs": {
-      "sha": "39719f5ffbbb5418",
+      "sha": "56cfdc99b833741c",
       "source": "ajch_agent_framework/tools/build-diagrams.mjs"
     },
     "scripts/check-docs.mjs": {
-      "sha": "3f63237aa3063405",
+      "sha": "8867e9f791f1b92d",
       "source": "ajch_agent_framework/checks/check-docs.mjs"
     },
     "scripts/diagram-kit.mjs": {
-      "sha": "b3bdba4ea38b9792",
+      "sha": "3052957b9a85af99",
       "source": "ajch_agent_framework/tools/diagram-kit.mjs"
     }
   }
