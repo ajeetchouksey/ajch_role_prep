@@ -3,3 +3,8 @@ tests/smoke/shots/
 *.bak
 .DS_Store
 .framework/
+app/node_modules/
+app/build/
+app/.react-router/
+app/.wrangler/
+app/public/content/

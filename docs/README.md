@@ -3,7 +3,7 @@
 > The decisions behind Role Prep, in the order to read them: why it exists, who
 > it serves, what we build, how it looks, and how the repo and agents deliver it.
 >
-> Status: Draft · Updated: 2026-11-03 · Owner: Ajeet Chouksey
+> Status: Draft · Updated: 2026-11-04 · Owner: Ajeet Chouksey
 
 ## Reading order
 
@@ -14,6 +14,7 @@
 | 03 | [Epic, features and stories](03-epic-features-stories.md) | What we build, in which phase and gate, with acceptance criteria |
 | 04 | [UX and UI plan](04-ux-ui-plan.md) | How every feature looks and behaves: screens, flows, states and brand |
 | 05 | [Repo, brand and agent kit plan](05-repo-brand-agent-kit-plan.md) | Where content, code and agents live, and how the authoring pipeline runs |
+| 06 | [App architecture](06-app-architecture.md) | How the Role Prep app is built, hosted and installed: static pages plus a PWA |
 
 Each doc builds on the ones before it, so a newcomer can read top to bottom.
 

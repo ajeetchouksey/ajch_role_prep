@@ -1,0 +1,37 @@
+{
+  "name": "roleprep-app",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Role Prep app: pre-rendered public pages plus an installable practice PWA, served from one Cloudflare Worker at roleprep.aaryaai.dev.",
+  "type": "module",
+  "scripts": {
+    "content": "node scripts/copy-content.mjs",
+    "icons": "node scripts/make-icons.mjs",
+    "dev": "npm run content && react-router dev",
+    "build": "npm run content && react-router build",
+    "typecheck": "react-router typegen && tsc",
+    "check": "node scripts/check-build.mjs",
+    "preview": "npm run build && wrangler dev",
+    "deploy": "npm run build && wrangler deploy"
+  },
+  "dependencies": {
+    "react": "19.2.6",
+    "react-dom": "19.2.6",
+    "react-router": "7.18.5",
+    "@react-router/node": "7.18.5",
+    "isbot": "5.1.32"
+  },
+  "devDependencies": {
+    "@cloudflare/workers-types": "5.20261015.1",
+    "@react-router/dev": "7.18.5",
+    "@tailwindcss/vite": "4.3.0",
+    "@types/node": "22.19.0",
+    "@types/react": "19.2.14",
+    "@types/react-dom": "19.2.3",
+    "tailwindcss": "4.3.0",
+    "typescript": "6.0.2",
+    "vite": "8.0.16",
+    "vite-plugin-pwa": "1.3.0",
+    "wrangler": "4.124.0"
+  }
+}

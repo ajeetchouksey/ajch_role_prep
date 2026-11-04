@@ -4,17 +4,20 @@ Guidance for Claude Code in this repository.
 
 ## What this is
 
-`ajch_role_prep` holds **Role Prep**: interview practice for AI roles, served at
-aaryaai.dev/roleprep. Every question has a separate bar for **Tech**,
-**Tech Lead** and **Leadership** interviews. This repo owns two things:
+`ajch_role_prep` holds **Role Prep**: interview practice for AI roles, its own app at
+roleprep.aaryaai.dev. Every question has a separate bar for **Tech**, **Tech Lead**
+and **Leadership** interviews. This repo owns three things:
 
-1. **Content** in `content/roleprep/` (format `roleprep@2`), promoted to the app
-   at a pinned commit by `ajch_platform`'s `promote-content.yml`.
-2. **The agent kit** in `.claude/` that writes, reviews, builds, tests and
+1. **Content** in `content/roleprep/` (format `roleprep@2`).
+2. **The app** in `app/`: pre-rendered public pages plus an installable PWA for
+   practice, served with Role Prep's API (`/api/*`, `/mcp`) by one Cloudflare
+   Worker. Content and app ship from the same commit. See
+   `docs/06-app-architecture.md` and the `roleprep-engineering` skill.
+3. **The agent kit** in `.claude/` that writes, reviews, builds, tests and
    releases Role Prep, also packaged as the `roleprep-kit` Claude Code plugin.
 
-The web app, Worker routes and MCP server live in `ajch_platform`; the kit's
-engineering agents work there under its ownership rules.
+Sign-in uses the AaryaAI account at api.aaryaai.dev (ajch_platform);
+aaryaai.dev/roleprep redirects to the app.
 
 ## Start here
 
@@ -41,7 +44,7 @@ routes each part to a specialist and runs the gates. Or use a command:
 |---|---|---|
 | `roleprep-backend-engineer` | Worker routes and the MCP server | Sonnet 5.5 · medium |
 | `roleprep-docs-writer` | Planning docs in `docs/` | Sonnet 5.5 · medium |
-| `roleprep-frontend-engineer` | Screens in ajch_platform | Sonnet 5.5 · medium |
+| `roleprep-frontend-engineer` | Screens and PWA in app/ | Sonnet 5.5 · medium |
 | `roleprep-growth-analyst` | Gate metrics, search pages, channels | Sonnet 5.5 · medium |
 | `roleprep-lead` | Orchestrates all work; never writes | Opus 5.5 · high |
 | `roleprep-publisher` | Catalogue, version, changelog, release PR | Haiku 5.5 |
@@ -103,6 +106,7 @@ epic and stories, UX and UI plan, repo and kit plan. Start at `docs/README.md`.
 ```bash
 npm run kit       # render .claude/ from kit/ + kit.json (never edit .claude/ generated files)
 npm run check     # both validators
+npm --prefix app run dev     # the app locally (pre-render on build: npm --prefix app run build)
 npm run docs      # planning docs: names, headings, links, diagrams
 npm run catalog   # refresh topic counts in catalog.json
 npm run plugin    # render the kit, then regenerate plugin/ from .claude/

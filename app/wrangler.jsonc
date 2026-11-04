@@ -1,0 +1,21 @@
+{
+  // One Worker serves Role Prep: pre-rendered pages and the app shell as static
+  // assets, plus Role Prep's own API under /api/*.
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "roleprep",
+  "main": "worker/index.ts",
+  "compatibility_date": "2026-08-15",
+  "assets": {
+    "directory": "./build/client",
+    "binding": "ASSETS",
+    // Unmatched paths reach the Worker, which serves the app shell for page
+    // navigations (the pre-rendered home page must not stand in for app routes).
+    "not_found_handling": "none",
+    "html_handling": "auto-trailing-slash",
+    "run_worker_first": ["/api/*"]
+  },
+  "observability": { "enabled": true }
+  // Enable on first deploy to the custom domain:
+  // "routes": [{ "pattern": "roleprep.aaryaai.dev", "custom_domain": true }],
+  // "ai": { "binding": "AI" }
+}

@@ -3,11 +3,11 @@
 > Where Role Prep's content, code, brand and agents live, and how the authoring pipeline and migration run; for whoever builds or maintains the repo.
 >
 > Status: Draft · Updated: 2026-11-03 · Owner: Ajeet Chouksey
-> Reads after: [04 UX and UI plan](04-ux-ui-plan.md)
+> Reads after: [04 UX and UI plan](04-ux-ui-plan.md) · Next: [06 App architecture](06-app-architecture.md)
 
 ## Summary
 
-Role Prep content moves out of `ajch_platform` into a new repo, `ajch_role_prep`. The repo also carries its own Anthropic-style agent kit (agents, skills, slash commands, scripts and hooks), packaged later as a Claude Code plugin. The Role Prep UI stays in the aaryaai.dev app, built on the AaryaAI brand with a small Role Prep extension of its own.
+Role Prep content moves out of `ajch_platform` into a new repo, `ajch_role_prep`. The repo also carries its own Anthropic-style agent kit (agents, skills, slash commands, scripts and hooks), packaged later as a Claude Code plugin. The Role Prep UI was planned to stay in the aaryaai.dev app; since 2026-11-04 it is its own app in `ajch_role_prep/app/` (see [06 App architecture](06-app-architecture.md)), built on the AaryaAI brand with a small Role Prep extension of its own.
 
 **What moves where:**
 
@@ -28,10 +28,10 @@ Role Prep content moves out of `ajch_platform` into a new repo, `ajch_role_prep`
 
 ## Target architecture
 
-The new repo owns content and the authoring kit. aaryaai.dev and the MCP server only ever read a promoted, pinned commit. Brand tokens arrive as a git dependency, and the platform keeps syncing the shared agents out.
+The new repo owns content and the authoring kit. As planned, aaryaai.dev and the MCP server only ever read a promoted, pinned commit; since 2026-11-04 the app ships from the same commit as the content, so Role Prep needs no promotion step (see [06 App architecture](06-app-architecture.md)). Brand tokens arrive as a git dependency, and the platform keeps syncing the shared agents out.
 
-![Target architecture: ajch_role_prep content and kit flow through promote-content.yml, a pinned commit and jsDelivr to the ajch_platform web app and MCP server, with brand tokens and speech and AI services joining the app](diagrams/05-target-architecture.svg)
-*Content flows one way, from repo to promoted commit to app.*
+![Target architecture: ajch_role_prep holds content, kit and app; one build writes the app for the roleprep Worker, which serves pages, an API and an MCP server and calls Workers AI, with brand tokens joining the app](diagrams/05-target-architecture.svg)
+*Content, kit and app ship together from one commit.*
 
 ## Repo layout
 
@@ -296,5 +296,7 @@ Since 2026-11-04 `.claude/` is generated: the sources are `kit.json` and `kit/`,
 - Scripts in [`scripts/`](../scripts/): `validate-content.mjs`, `check-options.mjs`, `build-catalog.mjs`, plus `check-docs.mjs` and `build-plugin.mjs`, which the plan did not list. There is no `check-levels.mjs`.
 - [`plugin/`](../plugin/) and [`.claude-plugin/marketplace.json`](../.claude-plugin/marketplace.json) exist. The marketplace is `aaryaai-roleprep` and the plugin is named `roleprep-kit`, not `roleprep-authoring`.
 - The repo also holds `prototypes/`, `brand/` and this `docs/` folder, which the layout did not show. No `.mcp.json`, `CONTRIBUTING.md` or `schemas/` folder exists yet.
+
+Since then: on 2026-11-04 the app, its Worker and the MCP server moved from `ajch_platform` into `ajch_role_prep/app/`, served at roleprep.aaryaai.dev. The platform wiring in phases 3 and 4 and the "Changes in ajch_platform" table are superseded by the rollout in [06 App architecture](06-app-architecture.md#rollout); the target-architecture diagram above shows the new shape.
 
 Source: [Role Prep repo, brand and agent kit plan](https://claude.ai/artifact/1wfmQsbNM274b4UriqxfkD). The repo copy is the source of truth from now on.

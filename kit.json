@@ -69,6 +69,11 @@
         "file": "05-repo-brand-agent-kit-plan.md",
         "answers": "Where the code, content and agents live and how they work",
         "dependsOn": "03, 04"
+      },
+      {
+        "file": "06-app-architecture.md",
+        "answers": "How the Role Prep app is built, hosted and installed: static pages plus a PWA",
+        "dependsOn": "03, 04, 05"
       }
     ]
   }

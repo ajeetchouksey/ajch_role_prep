@@ -9,7 +9,9 @@
 
 **Epic statement:** As someone interviewing for an AI role at Tech, Tech Lead or Leadership level, I want to rehearse interview answers out loud and get scored against the bar for my level, so that I walk into the interview having already answered the hard questions and their follow-ups.
 
-**Goal:** replace today's read-only Role Prep (3 job-ad packs, 11 questions) with a practice product. A candidate answers out loud, gets scored against a rubric for their level, takes one fix and retries. They can do this on aaryaai.dev or in their own AI tool.
+**Goal:** replace today's read-only Role Prep (3 job-ad packs, 11 questions) with a practice product. A candidate answers out loud, gets scored against a rubric for their level, takes one fix and retries. They can do this in the Role Prep app or in their own AI tool.
+
+**Where it is built (decided 2026-11-04):** the app is its own installable web app at roleprep.aaryaai.dev, built in `ajch_role_prep/app/` with its own Worker, not inside `ajch_platform`. Stories below that name `/roleprep/...` Worker routes, `aarya-subscribe` or `aarya-mcp` now map to that Worker's `/api/*` and `/mcp`. See [06 App architecture](06-app-architecture.md).
 
 **Success metrics (from the business case, first proposals):**
 
@@ -83,12 +85,12 @@ Practice comes before reading. The candidate answers first, then sees what good 
 
 ## F3 Speak your answer
 
-Candidates rehearse out loud, because that is how interviews are answered. Audio is transcribed and discarded. Phase 1. Depends on F2. It runs on the existing `aarya-subscribe` Worker's Workers AI binding.
+Candidates rehearse out loud, because that is how interviews are answered. Audio is transcribed and discarded. Phase 1. Depends on F2. It runs on the Workers AI binding of the Role Prep Worker (see [06 App architecture](06-app-architecture.md#api)).
 
 | ID | Story | Acceptance criteria | Size | Priority | Status |
 | --- | --- | --- | --- | --- | --- |
 | RP-3.1 | As a candidate, I want to press "Speak your answer" and record, so that I practise out loud | Microphone permission asked only on the click; `MediaRecorder`; 3-minute limit; visible recording state and Stop; works in current Chrome, Edge, Safari and Firefox | M | Must | To do |
-| RP-3.2 | As a candidate, I want my recording turned into editable text, so that I can fix misheard technical terms | `POST /roleprep/transcribe` runs `@cf/openai/whisper-large-v3-turbo`; transcript within 10 seconds for a 2-minute answer (target); text editable; audio never stored or logged | M | Must | To do |
+| RP-3.2 | As a candidate, I want my recording turned into editable text, so that I can fix misheard technical terms | `POST /api/transcribe` runs `@cf/openai/whisper-large-v3-turbo`; transcript within 10 seconds for a 2-minute answer (target); text editable; audio never stored or logged | M | Must | To do |
 | RP-3.3 | As a candidate, I want length, pace, filler words and a length verdict, so that I improve how I say it, not only what I say | Computed in the browser; updates while typing and after speaking; filler list kept in one constant | S | Must | To do |
 | RP-3.4 | As the platform owner, I want transcription rate-limited, so that the shared free AI allowance is protected | Reuses the Mentor's burst, daily and global limit pattern; friendly message on 429; upload size capped at about 3 minutes of audio | S | Must | To do |
 | RP-3.5 | As a candidate, I want a clear privacy notice before my first recording, so that I trust the feature | One-time notice that audio is not stored; typed practice always available; `Permissions-Policy: microphone=(self), camera=()` added to `public/_headers` | S | Must | To do |
@@ -99,7 +101,7 @@ Feedback is the product's main promise: point-by-point, quoting the candidate's 
 
 | ID | Story | Acceptance criteria | Size | Priority | Status |
 | --- | --- | --- | --- | --- | --- |
-| RP-4.1 | As a candidate, I want my answer scored point by point against the rubric for my level, so that I know exactly what I missed | `POST /roleprep/feedback` takes item ID, level and answer; the Worker loads the rubric and reference from content, never from the browser; returns status and quoted evidence per point, level fit, strengths, red flags hit, one fix; response validated against a schema | L | Must | To do |
+| RP-4.1 | As a candidate, I want my answer scored point by point against the rubric for my level, so that I know exactly what I missed | `POST /api/feedback` takes item ID, level and answer; the Worker loads the rubric and reference from content, never from the browser; returns status and quoted evidence per point, level fit, strengths, red flags hit, one fix; response validated against a schema | L | Must | To do |
 | RP-4.2 | As a candidate, I want my own answer rewritten to close the gaps, so that I have something I can actually say | Keeps the candidate's examples and order where possible; spoken style; 170 words or fewer; shown next to "fix this first" | S | Must | To do |
 | RP-4.3 | As the product owner, I want the scoring model chosen by a blind pilot, so that feedback is trustworthy | 20 real answers scored by a human and by 2 candidate models; at least 80% agreement on rubric points to pass gate 1; result recorded in `docs/agent-framework.md`; model set per task through a Worker variable | M | Must | To do |
 | RP-4.4 | As a candidate, I want to retry with the one fix pinned and see my score change, so that improvement is visible | "Try again with this fix" keeps the fix on screen; attempt history per moment and level; shows "up from X on your last try" | S | Must | To do |
@@ -124,7 +126,7 @@ Role Prep becomes a tool inside the candidate's own AI: our rubrics, their AI an
 
 | ID | Story | Acceptance criteria | Size | Priority | Status |
 | --- | --- | --- | --- | --- | --- |
-| RP-6.1 | As a candidate using Claude, VS Code or Cursor, I want to connect a Role Prep MCP server, so that I can practise in my own AI | Separate Worker `aarya-mcp` on `mcp.aaryaai.dev`, built with the Agents SDK over Streamable HTTP; read-only, no login; IP rate limits; content read from the manifest-pinned commit | L | Must | To do |
+| RP-6.1 | As a candidate using Claude, VS Code or Cursor, I want to connect a Role Prep MCP server, so that I can practise in my own AI | Served by the Role Prep Worker at `/mcp` on roleprep.aaryaai.dev (see [06 App architecture](06-app-architecture.md#api)), built with the Agents SDK over Streamable HTTP; read-only, no login; IP rate limits; content read from the same commit as the app | L | Must | To do |
 | RP-6.2 | As a candidate's AI, I want tools to browse and fetch practice content, so that it can run practice on our bar | `list_topics`, `list_subtopics`, `start_practice` (prompts without answers) and `get_rubric` (rubric, reference and follow-ups for one item and level); input schemas documented | M | Must | To do |
 | RP-6.3 | As a candidate, I want a ready-made mock interview, so that my AI runs a full session without me writing a prompt | `mock_interview` offered as both an MCP prompt and a tool, for clients that skip prompts; asks one question at a time, waits, scores with `get_rubric`, gives one fix, then the follow-up | S | Must | To do |
 | RP-6.4 | As a candidate, I want a setup page, so that I can connect in about a minute | "Practise with your own AI" page with steps for Claude, VS Code and Cursor; server URL with a copy button; ChatGPT listed only after access is verified | S | Should | To do |
@@ -191,7 +193,7 @@ The critical path is F1, then F2 and F4, then gate 1. There is no launch until t
 
 **Open decisions:**
 
-- [ ] Scoring model for `/roleprep/feedback`: decided by RP-4.3
+- [ ] Scoring model for `/api/feedback`: decided by RP-4.3
 - [ ] Payment provider for the Interview Pass (RP-9.1)
 - [ ] Final pass prices after the willingness-to-pay test
 - [ ] Whether public sub-topic pages (RP-8.2) show one sample moment or a full sub-topic

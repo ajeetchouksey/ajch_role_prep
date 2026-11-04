@@ -64,6 +64,8 @@ Five flows, four steps each. The first-visit flow is the one to get right first.
 
 ## Screen inventory
 
+Role Prep is its own app at roleprep.aaryaai.dev, so the `/roleprep` prefix in the routes below is dropped there; see [06 App architecture](06-app-architecture.md#routes-and-rendering) for the route table and which screens are pre-rendered for search.
+
 There are fourteen screens and states. Six are prototyped. The eight not yet designed include the mock round, which has no story in the epic yet.
 
 | # | Screen | Route | Job | Stories | Prototype |
@@ -224,7 +226,7 @@ The look is AaryaAI brand v2 with a "practice studio" layer: calm and dark by de
 
 ## Component inventory
 
-Role Prep reuses the platform primitives and adds 13 components. The 5 general-purpose ones go into `src/components/ui` through the Design Systems Engineer; the rest stay in `src/features/roleprep`.
+Role Prep reuses the platform primitives and adds 13 components. The 5 general-purpose ones go into `src/components/ui` through the Design Systems Engineer; the rest stay in the Role Prep app (`ajch_role_prep/app/`, see [06 App architecture](06-app-architecture.md)).
 
 | Component | Used on | Kind | Owner |
 | --- | --- | --- | --- |

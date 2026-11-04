@@ -52,8 +52,24 @@ skill and command.
 npm run check     # structure, editorial rules and pushback giveaways
 ```
 
+## The app
+
+`app/` is Role Prep's own app at roleprep.aaryaai.dev: pre-rendered public pages
+for search plus an installable PWA for practice, served by one Cloudflare Worker.
+
+```bash
+cd app
+npm install
+npm run dev          # local dev server
+npm run build        # copy content, pre-render public pages, build the PWA
+npm run check        # verify pages, app shell, service worker and manifest
+npx wrangler dev     # run the built app in the Workers runtime
+```
+
+Why it's built this way: [docs/06-app-architecture.md](docs/06-app-architecture.md).
+
 ## Contributing
 
 Content changes go through `/new-subtopic` or `/review`, then `/release`. A
 change needs a `rubric-reviewer` PASS, clean validators and an AppSec PASS
-before it is merged. After merge, the content is promoted from `ajch_platform`.
+before it is merged. Content ships with the app on the next deploy.

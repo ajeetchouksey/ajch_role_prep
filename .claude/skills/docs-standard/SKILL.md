@@ -23,6 +23,7 @@ explained.
 | `03-epic-features-stories.md` | What we build, in which phase, with acceptance criteria | 01, 02 |
 | `04-ux-ui-plan.md` | How every feature looks and behaves | 02, 03 |
 | `05-repo-brand-agent-kit-plan.md` | Where the code, content and agents live and how they work | 03, 04 |
+| `06-app-architecture.md` | How the Role Prep app is built, hosted and installed: static pages plus a PWA | 03, 04, 05 |
 
 A new doc takes the next free number, or slots in by renumbering when it
 must be read earlier. Renumbering means updating every link to it, the

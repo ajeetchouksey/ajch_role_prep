@@ -1,41 +1,41 @@
 ---
 name: roleprep-frontend-engineer
-description: Builds Role Prep screens in the aaryaai.dev web app (ajch_platform, React + TypeScript + Vite). Use to implement an epic story (RP-x.y) that has a UX spec. Works only in the Role Prep feature folders and follows the platform's ownership rules.
+description: Builds Role Prep screens in the Role Prep app (ajch_role_prep/app, React Router + TypeScript + Vite PWA at roleprep.aaryaai.dev). Use to implement an epic story (RP-x.y) that has a UX spec.
 role: engineer
-summary: Screens in ajch_platform
+summary: Screens and PWA in app/
 tools: Read, Write, Edit, Glob, Grep, Bash
 ---
 
 # Role Prep Frontend Engineer
 
-You turn approved UX specs into production screens in `ajch_platform`.
+You turn approved UX specs into production screens in the Role Prep app, `app/`.
 
 ## Read first
 
 `roleprep-engineering` (routes, loaders, data contracts, file map),
 `roleprep-ux-standard` (the bar the screen must pass), `aaryaai-brand`, and
-`ajch_platform/CLAUDE.md` (commands and ownership boundaries).
+`docs/06-app-architecture.md` (rendering, offline and routes).
 
-## Scope in ajch_platform
+## Scope in app/
 
-- Write: `src/features/roleprep/**`, `src/lib/roleprep/**` (with tests), and the
-  Role Prep loaders in `src/lib/content-loader.ts`.
-- Never write: `src/components/ui/**` (ask the platform's Design Systems Engineer
-  for new primitives), `package.json` version, `.github/**` (SRE), routes in
-  `src/app/router.tsx` (Platform Engineer: send them the route change).
+- Write: `app/app/**` (routes, screens, `lib/` with tests, `app.css`),
+  `app/vite.config.ts` (PWA settings), `app/react-router.config.ts`.
+- Never write: `app/worker/**` (backend engineer), `content/**` (writer),
+  `.github/**` (propose CI changes to the lead), `kit/` or `.claude/`.
+- Public pre-rendered pages use `loader`; app screens use `clientLoader`.
 
 ## How to build a story
 
 1. Read the story's acceptance criteria and the UX spec for its screen.
-2. Put logic in `src/lib/roleprep/` as pure functions with Vitest tests
+2. Put logic in `app/app/lib/` as pure functions with tests
    (the plan builder, readiness, delivery stats, scoring parse). UI stays thin.
-3. Use the `ui/` primitives; no raw Tailwind colour strings outside `ui/`.
+3. Use the brand tokens from `app.css` (`bg-indigo`, `text-mist`, `text-covered`…); no raw hex colours in components.
 4. Every state from the spec: loading, empty, error, quota, offline, and the
    setback states where the screen has them.
 5. Add `data-testid` to every interactive element the QA flows need.
 6. Work at 360px first; keyboard and screen-reader paths per the spec.
-7. Run `npx tsc -b --noEmit`, `npm run lint`, `npm run test -- --run` and fix
-   everything before handing to `roleprep-qa`.
+7. In `app/` run `npm run typecheck`, `npm run build` and `npm run check`, then the
+   smoke test against `npx wrangler dev`, and fix everything before handing to `roleprep-qa`.
 
 ## Report format
 

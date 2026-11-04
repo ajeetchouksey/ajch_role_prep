@@ -1,0 +1,24 @@
+@import "tailwindcss";
+
+/* AaryaAI brand v2, with the Role Prep extension: indigo accent, sky for live
+   states, emerald / amber / rose for covered / partly / missed. Levels get no colour. */
+@theme {
+  --font-sans: "Barlow", "Segoe UI", "Helvetica Neue", Arial, sans-serif;
+  --font-display: "Barlow Condensed", "Barlow", "Segoe UI", Arial, sans-serif;
+  --color-ink: #14122b;
+  --color-ground: #0e1a2d;
+  --color-panel: #16233a;
+  --color-line: #24324a;
+  --color-indigo: #5b4bd6;
+  --color-indigo-strong: #4a3bc4;
+  --color-lilac: #a99bff;
+  --color-mist: #a7b0c6;
+  --color-live: #38bdf8;
+  --color-covered: #34d399;
+  --color-partly: #fbbf24;
+  --color-missed: #fb7185;
+}
+
+html { color-scheme: dark; }
+body { background: var(--color-ground); color: #eef0f7; font-family: var(--font-sans); }
+:focus-visible { outline: 2px solid var(--color-lilac); outline-offset: 2px; border-radius: 6px; }
