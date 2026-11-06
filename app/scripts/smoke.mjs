@@ -36,8 +36,9 @@ const page = await browser.newPage({ viewport: { width: 1280, height: 900 } });
 page.on('pageerror', (e) => errors.push(e.message));
 
 await page.goto(BASE + SUB);
+await page.waitForLoadState('networkidle');
 await page.getByRole('radio', { name: 'Leadership' }).click();
-t('level switch shows the Leadership question', await page.getByText('wrong document', { exact: false }).first().isVisible());
+t('level switch shows the Leadership question', await page.getByText('wrong document', { exact: false }).first().waitFor({ timeout: 8000 }).then(() => true, () => false));
 await page.screenshot({ path: join(SHOTS, 'subtopic.png'), fullPage: true });
 
 await page.getByRole('link', { name: 'Practise this sub-topic' }).click();
@@ -61,7 +62,7 @@ await page.screenshot({ path: join(SHOTS, 'today.png'), fullPage: true });
 const deep = await browser.newPage();
 deep.on('pageerror', (e) => errors.push(e.message));
 await deep.goto(BASE + '/practice/rag/hybrid-search-reranking');
-t('deep link to an app route loads from the app shell', await deep.getByText('1 of 5', { exact: false }).isVisible({ timeout: 5000 }));
+t('deep link to an app route loads from the app shell', await deep.getByText('1 of 5', { exact: false }).waitFor({ timeout: 10000 }).then(() => true, () => false));
 
 const swOk = await page.evaluate(async () => {
   if (!('serviceWorker' in navigator)) return false;
